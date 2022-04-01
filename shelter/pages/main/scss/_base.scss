@@ -8,12 +8,21 @@
   color: $color-dark-xl;
 }
 
-
 /**
  * Set up a decent box model on the root element
  */
 html {
   box-sizing: border-box;
+}
+
+/* 
+Make all elements from the DOM 
+inherit from the parent box-sizing 
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /* Make sure children take 
@@ -33,14 +42,6 @@ p {
   margin: 0;
 }
 
-
-/* 
-Make all elements from the DOM 
-inherit from the parent box-sizing 
- */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+html {
+  scroll-behavior: smooth;
 }
-

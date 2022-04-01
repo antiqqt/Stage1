@@ -387,6 +387,16 @@ html {
   box-sizing: border-box;
 }
 
+/* 
+Make all elements from the DOM 
+inherit from the parent box-sizing 
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 /* Make sure children take 
 full height of its partent */
 html,
@@ -404,14 +414,8 @@ p {
   margin: 0;
 }
 
-/* 
-Make all elements from the DOM 
-inherit from the parent box-sizing 
- */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+html {
+  scroll-behavior: smooth;
 }
 
 /**
@@ -448,11 +452,71 @@ inherit from the parent box-sizing
   width: 1px;
 }
 
-.main-container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+.body {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
   width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.header {
+  position: relative;
+  top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo-title {
+  font-family: "Georgia", Fallback, serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 110%;
+  color: #F1CDB3;
+}
+.logo-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 15px;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+.nav a {
+  line-height: 160%;
+  border-bottom: 3px solid transparent;
+}
+.nav a.active {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+a {
+  font-size: 1.5rem;
+  color: #CDCDCD;
+  text-decoration: none;
 }

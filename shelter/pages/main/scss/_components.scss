@@ -1,1 +1,9 @@
 @use 'variables' as *;
+
+// Links
+
+a {
+  font-size: $fs-paragraph-l;
+  color: $color-dark-s;
+  text-decoration: none;
+}

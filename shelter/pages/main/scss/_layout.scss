@@ -1,10 +1,70 @@
 @use 'variables' as *;
 
-.main-container {
-  max-width: $max-width; 
-  margin-left: auto; 
-  margin-right: auto; 
-  padding-left: 20px; 
-  padding-right: 20px; 
+.body {
+  display: flex;
+  justify-content: center;
+  background-color: $color-light-xl;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
   width: 100%;
+  padding-left: 40px; 
+  padding-right: 40px; 
+}
+
+// Header
+.header {
+  position: relative;
+  top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &-title {
+    font-family: $ff-heading;
+    font-size: $fs-logo-title;
+    font-weight: $fw-regular;
+    letter-spacing: 0.06em;
+    line-height: 110%;
+    color: $color-primary;
+  }
+
+  &-subtitle {
+    font-size: $fs-logo-subtitle;
+    font-weight: $fw-regular;
+    letter-spacing: 0.1em;
+    line-height: 15px;
+    text-align: center;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+
+  a {
+    line-height: 160%;
+    border-bottom: 3px solid transparent;
+  }
+
+  a.active {
+    color: $color-light-s;
+    border-bottom: 3px solid $color-primary;
+  }
+}
+
+// Main
+.main {
+  flex-grow: 1;
 }

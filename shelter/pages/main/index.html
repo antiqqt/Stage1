@@ -14,9 +14,47 @@
       type="image/x-icon"
     />
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/main.css" />
     <!-- Scripts -->
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body class="body">
+    <div class="body-container">
+      <!-- Header -->
+      <header class="header">
+        <!-- Logo -->
+        <div class="logo">
+          <h1 class="logo-title">Cozy House</h1>
+          <h1 class="logo-subtitle">Shelter for pets in Boston</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+          <a class='nav-link active' href="#about"> About the shelter </a>
+          <a class='nav-link' href="#our-friends"> Our pets</a>
+          <a class='nav-link' href="#help"> Help the shelter</a>
+          <a class='nav-link' href="#footer"> Contacts</a>
+        </nav>
+      </header>
+      <!-- Main -->
+      <main class="main">
+        <!-- Start screen -->
+        <section class="section section-start" id="start"></section>
+
+        <!-- About -->
+        <section class="section section-about" id="about"></section>
+
+        <!-- Our friends -->
+        <section class="section section-our-friends" id="our-friends"></section>
+
+        <!-- Help -->
+        <section class="section section-help" id="help"></section>
+
+        <!-- Donation -->
+        <section class="section section-donation" id="donation"></section>
+      </main>
+      <!-- Footer -->
+      <footer class="footer" id="footer">footer</footer>
+    </div>
+  </body>
 </html>
