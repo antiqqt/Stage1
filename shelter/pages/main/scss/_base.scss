@@ -1,7 +1,43 @@
+@use 'variables' as *;
+
+:root {
+  font-family: $ff-main;
+  font-size: 10px;
+  /* Set to 10px to scale comfortably */
+  font-weight: $fw-regular;
+  color: $color-dark-xl;
+}
+
+
+/**
+ * Set up a decent box model on the root element
+ */
 html {
   box-sizing: border-box;
 }
 
+/* Make sure children take 
+full height of its partent */
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* Clear defaukt html margins */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+
+/* 
+Make all elements from the DOM 
+inherit from the parent box-sizing 
+ */
 *,
 *::before,
 *::after {
