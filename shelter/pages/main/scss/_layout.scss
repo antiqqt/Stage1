@@ -11,14 +11,19 @@
   flex-direction: column;
   max-width: $max-width;
   width: 100%;
-  padding-left: 40px; 
-  padding-right: 40px; 
 }
 
 // Header
-.header {
+.header-wrapper {
   position: relative;
+}
+
+.header {
+  position: absolute;
   top: 60px;
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
   display: flex;
   justify-content: space-between;
 }
@@ -43,22 +48,36 @@
     letter-spacing: 0.1em;
     line-height: 15px;
     text-align: center;
+    color: $color-light-xl;
   }
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 35px;
-  padding-top: 16px;
-  padding-bottom: 20px;
 
-  a {
-    line-height: 160%;
-    border-bottom: 3px solid transparent;
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // Added to adjust link underline precisely
+    padding-bottom: 1px;
   }
 
-  a.active {
+  &-link {
+    display: block;
+    line-height: 160%;
+    border-bottom: 3px solid transparent;
+
+    // Added to adjust element precisely
+    letter-spacing: 0.0042em;
+  }
+
+  &-link.active {
     color: $color-light-s;
     border-bottom: 3px solid $color-primary;
   }
@@ -67,4 +86,54 @@
 // Main
 .main {
   flex-grow: 1;
+  // border: 3px solid black;
+}
+
+.section {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.section-start {
+  padding-top: 180px;
+  background: url('../../../assets/images/main/noise_transparent@2x.png'),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+    linear-gradient(0deg, #211f20, #211f20);
+
+  &-container {
+    display: flex;
+    gap: 3%;
+  }
+}
+
+.start-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 164px;
+
+  .start-heading {
+    margin-right: 20%;
+    margin-bottom: 42px;
+    margin-left: 0;
+    font-family: $ff-heading;
+    font-weight: $fw-regular;
+    font-size: $fs-h-2;
+    line-height: 130%;
+    color: $color-light-xl;
+  }
+
+  .start-subheading {
+    margin-bottom: 41px;
+    font-size: $fs-paragraph-l;
+    line-height: 160%;
+    color: $color-dark-s;
+  }
+}
+
+.start-puppy {
+  margin: 0;
+  &-img {
+    display: block;
+  }
 }

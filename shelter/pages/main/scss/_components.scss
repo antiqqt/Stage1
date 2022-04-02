@@ -7,3 +7,24 @@ a {
   color: $color-dark-s;
   text-decoration: none;
 }
+
+// Buttons
+
+.button {
+  width: 207px;
+  height: 52px;
+  margin: 0;
+
+  font-family: $ff-heading;
+  font-weight: $fw-regular;
+  font-size: $fs-button;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+  border-radius: 100px;
+
+  cursor: pointer;
+}

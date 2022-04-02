@@ -21,25 +21,62 @@
   <body class="body">
     <div class="body-container">
       <!-- Header -->
-      <header class="header">
-        <!-- Logo -->
-        <div class="logo">
-          <h1 class="logo-title">Cozy House</h1>
-          <h1 class="logo-subtitle">Shelter for pets in Boston</h1>
-        </div>
+      <div class="header-wrapper">
+        <header class="header">
+          <!-- Logo -->
+          <a class="logo" href="../main/">
+            <h1 class="logo-title">Cozy House</h1>
+            <p class="logo-subtitle">Shelter for pets in Boston</p>
+          </a>
 
-        <!-- Navigation -->
-        <nav class="nav">
-          <a class='nav-link active' href="#about"> About the shelter </a>
-          <a class='nav-link' href="#our-friends"> Our pets</a>
-          <a class='nav-link' href="#help"> Help the shelter</a>
-          <a class='nav-link' href="#footer"> Contacts</a>
-        </nav>
-      </header>
+          <!-- Navigation -->
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-list-item">
+                <a class="nav-link active" href="#about"> About the shelter </a>
+              </li>
+
+              <li class="nav-list-item">
+                <a class="nav-link" href="#our-friends"> Our pets</a>
+              </li>
+
+              <li class="nav-list-item">
+                <a class="nav-link" href="#help"> Help the shelter</a>
+              </li>
+
+              <li class="nav-list-item">
+                <a class="nav-link" href="#footer"> Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
       <!-- Main -->
       <main class="main">
         <!-- Start screen -->
-        <section class="section section-start" id="start"></section>
+        <section class="section section-start" id="start">
+          <div class="section-start-container">
+            <!-- Title -->
+            <div class="start-content">
+              <h2 class="start-heading">Not only people need a house</h2>
+              <p class="start-subheading">
+                We offer to give a chance to a little and nice puppy with an
+                extremely wide and open heart. He or she will love you more than
+                anybody else in the world, you will see!
+              </p>
+              <button class="button button-primary">Make a friend</button>
+            </div>
+
+            <!-- Puppy image -->
+            <figure class="start-puppy">
+              <img
+                class="start-puppy-img"
+                src="../../assets/images/main/start-screen-puppy.png"
+                alt="Puppy"
+              />
+            </figure>
+          </div>
+        </section>
 
         <!-- About -->
         <section class="section section-about" id="about"></section>
