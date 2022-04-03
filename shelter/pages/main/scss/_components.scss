@@ -15,9 +15,14 @@ a {
 
 // Buttons
 .button {
-  width: 207px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 52px;
   margin: 0;
+  padding-left: 2.53em;
+  padding-right: 2.53em;
 
   font-family: $ff-heading;
   font-weight: $fw-regular;
@@ -37,4 +42,16 @@ a {
     border-color: $color-primary-light;
     cursor: pointer;
   }
+}
+
+.button-secondary {
+  background-color: transparent;
+}
+
+.button-arrow {
+  width: 52px;
+  padding: 22px 19px 24px;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
 }
