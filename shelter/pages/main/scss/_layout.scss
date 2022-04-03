@@ -83,7 +83,7 @@
   }
 }
 
-// Main
+// Main 
 .main {
   flex-grow: 1;
   // border: 3px solid black;
@@ -94,6 +94,7 @@
   padding-left: 40px;
 }
 
+/* section Start-screen */
 .section-start {
   padding-top: 180px;
   background: url('../../../assets/images/main/noise_transparent@2x.png'),
@@ -135,5 +136,63 @@
   margin: 0;
   &-img {
     display: block;
+  }
+}
+
+/* section About */
+
+.section-about {
+  margin-bottom: 100px;
+  padding-top: 80px;
+
+  &-container {
+    display: flex;
+    gap: 14%; /* 120px */
+    padding-right: 14.584%; /* 175px */
+    padding-left: 14.584%;
+  }
+}
+
+.about-pets {
+  flex-basis: 0;
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+
+  max-width: 300px;
+  max-height: 408px;
+  margin: 0;
+
+
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.about-content {
+  flex-basis: 0;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 14px 0;
+  
+  .heading {
+    padding-right: 1.72em;
+    font-family: $ff-heading;
+    font-weight: $fw-regular;
+    font-size: $fs-h-3;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+  }
+
+  .subheading {
+    font-size: $fs-paragraph-l;
+    line-height: 160%;
+    color: $color-dark-xl;
   }
 }

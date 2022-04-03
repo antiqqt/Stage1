@@ -1,15 +1,19 @@
 @use 'variables' as *;
 
 // Links
-
 a {
   font-size: $fs-paragraph-l;
   color: $color-dark-s;
   text-decoration: none;
+  transition: .4s;
+  
+  &:hover {
+    color: $color-light-s;
+    cursor: pointer;
+  }
 }
 
 // Buttons
-
 .button {
   width: 207px;
   height: 52px;
@@ -26,5 +30,11 @@ a {
   border: 2px solid $color-primary;
   border-radius: 100px;
 
-  cursor: pointer;
+  transition: all .4s;
+
+  &:hover {
+    background-color: $color-primary-light;
+    border-color: $color-primary-light;
+    cursor: pointer;
+  }
 }

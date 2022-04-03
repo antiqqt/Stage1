@@ -534,6 +534,7 @@ html {
   padding-left: 40px;
 }
 
+/* section Start-screen */
 .section-start {
   padding-top: 180px;
   background: url("../../../assets/images/main/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), linear-gradient(0deg, #211f20, #211f20);
@@ -573,10 +574,66 @@ html {
   display: block;
 }
 
+/* section About */
+.section-about {
+  margin-bottom: 100px;
+  padding-top: 80px;
+}
+.section-about-container {
+  display: flex;
+  gap: 14%;
+  /* 120px */
+  padding-right: 14.584%;
+  /* 175px */
+  padding-left: 14.584%;
+}
+
+.about-pets {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  max-height: 408px;
+  margin: 0;
+}
+.about-pets-img {
+  width: 100%;
+  height: auto;
+}
+
+.about-content {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 14px 0;
+}
+.about-content .heading {
+  padding-right: 1.72em;
+  font-family: "Georgia", Fallback, serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.about-content .subheading {
+  font-size: 1.5rem;
+  line-height: 160%;
+  color: #4C4C4C;
+}
+
 a {
   font-size: 1.5rem;
   color: #CDCDCD;
   text-decoration: none;
+  transition: 0.4s;
+}
+a:hover {
+  color: #FAFAFA;
+  cursor: pointer;
 }
 
 .button {
@@ -592,5 +649,10 @@ a {
   background-color: #F1CDB3;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
+  transition: all 0.4s;
+}
+.button:hover {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
   cursor: pointer;
 }
