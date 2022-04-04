@@ -10,9 +10,9 @@
 @use 'base';
 @use 'helpers';
 
-// 4. Layout-related sections
-@use 'layout';
-
-// 5. Components
+// 4. Components
 @use 'components';
+
+// 5. Layout-related sections
+@use 'layout';
 
