@@ -1,10 +1,112 @@
 @use 'variables' as *;
 
-.main-container {
-  max-width: $max-width; 
-  margin-left: auto; 
-  margin-right: auto; 
-  padding-left: 20px; 
-  padding-right: 20px; 
+.body {
+  display: flex;
+  justify-content: center;
+  background-color: $color-light-xl;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width;
+    width: 100%;
+  }
+}
+
+// Header
+.header-wrapper {
+  position: relative;
+}
+
+.header {
   width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header--absolute {
+  position: absolute;
+  top: 60px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__title {
+    font-family: $ff-heading;
+    font-size: $fs-logo-title;
+    font-weight: $fw-regular;
+    letter-spacing: 0.06em;
+    line-height: 110%;
+    color: $color-primary;
+  }
+
+  &__subtitle {
+    font-size: $fs-logo-subtitle;
+    font-weight: $fw-regular;
+    letter-spacing: 0.1em;
+    line-height: 15px;
+    text-align: center;
+    color: $color-light-xl;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // Added to adjust link underline precisely
+    padding-bottom: 1px;
+  }
+
+  &__link {
+    display: block;
+    line-height: 160%;
+    border-bottom: 3px solid transparent;
+
+    // Added to adjust element precisely
+    letter-spacing: 0.0042em;
+  }
+
+  &__link--active {
+    color: $color-light-s;
+    border-bottom: 3px solid $color-primary;
+  }
+}
+
+// Main
+.main {
+  flex-grow: 1;
+}
+
+.section {
+  padding-top: 80px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+// Footer
+.footer {
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+  background: url('../../../assets/images/main/noise_transparent@2x.png'),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+    linear-gradient(0deg, #211f20, #211f20);
+
+  &__container {
+    display: flex;
+  }
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Title -->
-    <title>Shelter</title>
+    <title>Pets</title>
     <!-- Favicon -->
     <link
       rel="shortcut icon"
@@ -14,9 +14,116 @@
       type="image/x-icon"
     />
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/main.css" />
     <!-- Scripts -->
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body class="body">
+    <div class="body__container">
+      <!-- Header -->
+      <div class="header-wrapper">
+        <header class="header">
+          <!-- Logo -->
+          <a class="logo header__logo" href="../main/">
+            <h1 class="logo__title">Cozy House</h1>
+            <p class="logo__subtitle">Shelter for pets in Boston</p>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link nav__link--active" href="#about">
+                  About the shelter
+                </a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="#our-friends"> Our pets</a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="#help"> Help the shelter</a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="#footer"> Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+
+      <!-- Main -->
+      <main class="main">
+        main
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" id="footer">
+        <div class="footer__container">
+          <!-- Contacts -->
+          <div class="data-block data-block--contacts">
+            <!-- Title -->
+            <h3 class="heading heading--h3 data-block__heading">
+              For questions and suggestions
+            </h3>
+
+            <div class="data-block__box data-block__box--mail">
+              <!-- Icon -->
+              <div class="data-block__icon data-block__icon--mail"></div>
+
+              <!-- Text -->
+              <p class="data-block__text">email@shelter.com</p>
+            </div>
+
+            <div class="data-block__box data-block__box--phone">
+              <!-- Icon -->
+              <div class="data-block__icon data-block__icon--phone"></div>
+
+              <!-- Text -->
+              <p class="data-block__text">+13 674 567 75 54</p>
+            </div>
+          </div>
+
+          <!-- Locations -->
+          <div class="data-block data-block--locations">
+            <!-- Title -->
+            <h3 class="heading heading--h3 data-block__heading">
+              We are waiting for your visit
+            </h3>
+
+            <!-- Adress 1 -->
+            <div class="data-block__box data-block__box--address">
+              <!-- Icon -->
+              <div class="data-block__icon data-block__icon--marker"></div>
+
+              <!-- Text -->
+              <p class="data-block__text">
+                1 Central Street, Boston (entrance from the store)
+              </p>
+            </div>
+
+            <!-- Adress 2 -->
+            <div class="data-block__box data-block__box--address">
+              <!-- Icon -->
+              <div
+                class="data-block__icon data-block__icon--marker data-block__icon--marker--2"
+              ></div>
+
+              <!-- Text -->
+              <p class="data-block__text">18 South Park, London</p>
+            </div>
+          </div>
+
+          <!-- Puppy image -->
+          <img
+            class="footer__img"
+            src="../../assets/images/main/footer-puppy.png"
+            alt="Cheerful puppy"
+          />
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
