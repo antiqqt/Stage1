@@ -95,6 +95,10 @@
   padding-top: 80px;
   padding-right: 40px;
   padding-left: 40px;
+
+  &--dark {
+    background-color: $color-light-l;
+  }
 }
 
 /* section Start-screen */
@@ -185,7 +189,6 @@
 
 /* section Our friends */
 .section--friends {
-  background-color: $color-light-l;
   padding-bottom: 100px;
 
   &__container {
@@ -238,7 +241,6 @@
 /* section Donation */
 .section--donation {
   padding-bottom: 100px;
-  background-color: $color-light-l;
 
   &__container {
     display: flex;

@@ -786,6 +786,9 @@ a:hover {
   padding-right: 40px;
   padding-left: 40px;
 }
+.section--dark {
+  background-color: #F6F6F6;
+}
 
 /* section Start-screen */
 .section--start {
@@ -862,7 +865,6 @@ a:hover {
 
 /* section Our friends */
 .section--friends {
-  background-color: #F6F6F6;
   padding-bottom: 100px;
 }
 .section--friends__container {
@@ -907,7 +909,6 @@ a:hover {
 /* section Donation */
 .section--donation {
   padding-bottom: 100px;
-  background-color: #F6F6F6;
 }
 .section--donation__container {
   display: flex;
