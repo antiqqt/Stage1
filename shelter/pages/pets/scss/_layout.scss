@@ -14,21 +14,17 @@
 }
 
 // Header
-.header-wrapper {
-  position: relative;
-}
-
 .header {
   width: 100%;
   padding-right: 40px;
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
-}
 
-.header--absolute {
-  position: absolute;
-  top: 60px;
+  &--pets {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .logo {
@@ -43,6 +39,10 @@
     letter-spacing: 0.06em;
     line-height: 110%;
     color: $color-primary;
+
+    &--dark {
+      color: $color-dark-l;
+    }
   }
 
   &__subtitle {
@@ -52,6 +52,10 @@
     line-height: 15px;
     text-align: center;
     color: $color-light-xl;
+
+    &--dark {
+      color: $color-dark-3xl;
+    }
   }
 }
 
@@ -78,11 +82,24 @@
 
     // Added to adjust element precisely
     letter-spacing: 0.0042em;
+
+    &--dark {
+      color: $color-dark-l;
+
+      // Change on hover
+      &:hover {
+        color: $color-dark-3xl;
+      }
+    }
   }
 
   &__link--active {
     color: $color-light-s;
     border-bottom: 3px solid $color-primary;
+
+    &--dark {
+      color: $color-dark-l;
+    }
   }
 }
 
@@ -95,6 +112,10 @@
   padding-top: 80px;
   padding-right: 40px;
   padding-left: 40px;
+
+  &--dark {
+    background-color: $color-light-l;
+  }
 }
 
 // Footer
