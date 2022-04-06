@@ -492,12 +492,22 @@ a:hover {
 .button--secondary {
   background-color: transparent;
 }
-.button--arrow {
+.button--round {
   width: 52px;
   padding: 22px 19px 24px;
-  font-weight: 700;
-  font-size: 20px;
+  font-family: "Georgia", Fallback, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
   background-color: transparent;
+}
+.button--active {
+  background-color: #F1CDB3;
+}
+.button--inactive {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
 }
 
 .heading {
@@ -548,6 +558,7 @@ a:hover {
   padding-bottom: 30px;
   background-color: #FAFAFA;
   border-radius: 9px;
+  overflow: hidden;
 }
 .card__heading {
   font-family: "Georgia", Fallback, serif;

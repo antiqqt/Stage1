@@ -47,12 +47,25 @@ a {
     background-color: transparent;
   }
 
-  &--arrow {
+  &--round {
     width: 52px;
     padding: 22px 19px 24px;
-    font-weight: 700;
-    font-size: 20px;
+
+    font-family: $ff-heading;
+    font-weight: $fw-regular;
+    font-size: $fs-h-4;
+    line-height: 115%;
+    letter-spacing: 0.06em;
     background-color: transparent;
+  }
+
+  &--active {
+    background-color: $color-primary;
+  }
+  
+  &--inactive {
+    color: $color-dark-s;
+    border-color: $color-dark-s;
   }
 }
 
@@ -113,6 +126,7 @@ a {
   padding-bottom: 30px;
   background-color: $color-light-s;
   border-radius: 9px;
+  overflow: hidden; // To make corners not ugly
 
   &__heading {
     font-family: $ff-heading;
