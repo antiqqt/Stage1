@@ -492,12 +492,22 @@ a:hover {
 .button--secondary {
   background-color: transparent;
 }
-.button--arrow {
+.button--round {
   width: 52px;
   padding: 22px 19px 24px;
-  font-weight: 700;
-  font-size: 20px;
+  font-family: "Georgia", Fallback, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
   background-color: transparent;
+}
+.button--active {
+  background-color: #F1CDB3;
+}
+.button--inactive {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
 }
 
 .heading {
@@ -526,6 +536,33 @@ a:hover {
 .subheading {
   font-size: 1.5rem;
   line-height: 160%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+  background-color: #FAFAFA;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.card__heading {
+  font-family: "Georgia", Fallback, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #545454;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
 }
 
 .data-block {
@@ -681,6 +718,27 @@ a:hover {
 }
 .section--dark {
   background-color: #F6F6F6;
+}
+
+.section--pets {
+  padding-bottom: 100px;
+}
+.section--pets__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 45px;
+}
+.section--pets__heading {
+  text-align: center;
+}
+.section--pets__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 30px;
+  padding-top: 14px;
+  padding-bottom: 15px;
 }
 
 .footer {

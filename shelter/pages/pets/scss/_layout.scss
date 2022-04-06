@@ -118,6 +118,30 @@
   }
 }
 
+.section--pets {
+  padding-bottom: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 45px;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+  }
+}
+
 // Footer
 .footer {
   padding-top: 40px;

@@ -47,12 +47,25 @@ a {
     background-color: transparent;
   }
 
-  &--arrow {
+  &--round {
     width: 52px;
     padding: 22px 19px 24px;
-    font-weight: 700;
-    font-size: 20px;
+
+    font-family: $ff-heading;
+    font-weight: $fw-regular;
+    font-size: $fs-h-4;
+    line-height: 115%;
+    letter-spacing: 0.06em;
     background-color: transparent;
+  }
+
+  &--active {
+    background-color: $color-primary;
+  }
+  
+  &--inactive {
+    color: $color-dark-s;
+    border-color: $color-dark-s;
   }
 }
 
@@ -88,6 +101,37 @@ a {
   font-size: $fs-paragraph-l;
   line-height: 160%;
 }
+
+// Cards
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  overflow: hidden; // To make corners not ugly
+
+  &__heading {
+    font-family: $ff-heading;
+    font-weight: $fw-regular;
+    font-size: $fs-card-heading;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: $color-dark-l;
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
 
 // Data blocks in footer
 .data-block {
