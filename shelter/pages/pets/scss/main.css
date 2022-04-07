@@ -502,6 +502,14 @@ a:hover {
   letter-spacing: 0.06em;
   background-color: transparent;
 }
+.button--arrow {
+  padding: 24px 19px 23px;
+}
+.button--arrow__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button--active {
   background-color: #F1CDB3;
 }
