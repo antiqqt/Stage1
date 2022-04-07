@@ -505,9 +505,15 @@ a:hover {
 .button--active {
   background-color: #F1CDB3;
 }
-.button--inactive {
+.button--disabled {
   color: #CDCDCD;
   border-color: #CDCDCD;
+}
+.button--disabled:hover {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
+  background-color: transparent;
+  cursor: default;
 }
 
 .heading {
@@ -546,6 +552,7 @@ a:hover {
   padding-bottom: 30px;
   background-color: #FAFAFA;
   border-radius: 9px;
+  transition: 0.4s;
   overflow: hidden;
 }
 .card__heading {
@@ -556,6 +563,14 @@ a:hover {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
+}
+.card:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.card:hover > .button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .pagination {
@@ -642,8 +657,12 @@ a:hover {
   justify-content: space-between;
 }
 .header--pets {
+  max-width: 1280px;
+  position: fixed;
+  top: 0;
   padding-top: 30px;
   padding-bottom: 30px;
+  background-color: #FFFFFF;
 }
 
 .logo {
@@ -721,6 +740,7 @@ a:hover {
 }
 
 .section--pets {
+  padding-top: 200px;
   padding-bottom: 100px;
 }
 .section--pets__container {

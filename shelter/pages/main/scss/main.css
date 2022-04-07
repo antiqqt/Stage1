@@ -505,9 +505,15 @@ a:hover {
 .button--active {
   background-color: #F1CDB3;
 }
-.button--inactive {
+.button--disabled {
   color: #CDCDCD;
   border-color: #CDCDCD;
+}
+.button--disabled:hover {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
+  background-color: transparent;
+  cursor: default;
 }
 
 .heading {

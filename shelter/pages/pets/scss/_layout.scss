@@ -22,8 +22,14 @@
   justify-content: space-between;
 
   &--pets {
+    max-width: $max-width;
+    position: fixed;
+    top: 0;
+
     padding-top: 30px;
     padding-bottom: 30px;
+
+    background-color: $color-light-xl;
   }
 }
 
@@ -119,6 +125,7 @@
 }
 
 .section--pets {
+  padding-top: calc(120px + 80px); // usual padding + height of header
   padding-bottom: 100px;
 
   &__container {

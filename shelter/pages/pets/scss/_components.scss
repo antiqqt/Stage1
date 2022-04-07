@@ -62,10 +62,17 @@ a {
   &--active {
     background-color: $color-primary;
   }
-  
-  &--inactive {
+
+  &--disabled {
     color: $color-dark-s;
     border-color: $color-dark-s;
+
+    &:hover {
+      color: $color-dark-s;
+      border-color: $color-dark-s;
+      background-color: transparent;
+      cursor: default;
+    }
   }
 }
 
@@ -111,6 +118,8 @@ a {
   padding-bottom: 30px;
   background-color: $color-light-s;
   border-radius: 9px;
+
+  transition: 0.4s;
   overflow: hidden; // To make corners not ugly
 
   &__heading {
@@ -122,6 +131,19 @@ a {
     text-align: center;
     color: $color-dark-l;
   }
+
+  &:hover {
+    background-color: $color-light-xl;
+    cursor: pointer;
+
+    // To make button background look
+    // as if we hovered over the button,
+    // not the card itself
+    > .button {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
 }
 
 // Pagination
@@ -131,7 +153,6 @@ a {
   align-items: center;
   column-gap: 20px;
 }
-
 
 // Data blocks in footer
 .data-block {

@@ -35,7 +35,7 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a class="nav__link nav__link--dark" href="#about">
+                <a class="nav__link nav__link--dark" href="../main/">
                   About the shelter
                 </a>
               </li>
@@ -50,7 +50,7 @@
               </li>
 
               <li class="nav__item">
-                <a class="nav__link nav__link--dark" href="#help">
+                <a class="nav__link nav__link--dark" href="../main/#help">
                   Help the shelter
                 </a>
               </li>
@@ -169,12 +169,12 @@
             <!-- Pagination -->
             <div class="pagination">
               <!-- double backward -->
-              <button class="button button--round button--inactive pagination__button"">
+              <button class="button button--round button--disabled pagination__button"">
                 <<
               </button>
 
               <!-- backward -->
-              <button class="button button--round button--inactive pagination__button"">
+              <button class="button button--round button--disabled pagination__button"">
                 <
               </button>
 
@@ -209,21 +209,29 @@
               For questions and suggestions
             </h3>
 
-            <div class="data-block__box data-block__box--mail">
+            <!-- Mail -->
+            <a
+              class="data-block__box data-block__box--mail"
+              href="mailto:email@shelter.com"
+            >
               <!-- Icon -->
               <div class="data-block__icon data-block__icon--mail"></div>
 
               <!-- Text -->
               <p class="data-block__text">email@shelter.com</p>
-            </div>
+            </a>
 
-            <div class="data-block__box data-block__box--phone">
+            <!-- Phone -->
+            <a
+              class="data-block__box data-block__box--phone"
+              href="tel:+136745677554"
+            >
               <!-- Icon -->
               <div class="data-block__icon data-block__icon--phone"></div>
 
               <!-- Text -->
               <p class="data-block__text">+13 674 567 75 54</p>
-            </div>
+            </a>
           </div>
 
           <!-- Locations -->
@@ -234,7 +242,11 @@
             </h3>
 
             <!-- Adress 1 -->
-            <div class="data-block__box data-block__box--address">
+            <a
+              class="data-block__box data-block__box--address"
+              href="https://goo.gl/maps/X3gwqRryNBSUMr1i6"
+              target="_blank"
+            >
               <!-- Icon -->
               <div class="data-block__icon data-block__icon--marker"></div>
 
@@ -242,10 +254,14 @@
               <p class="data-block__text">
                 1 Central Street, Boston (entrance from the store)
               </p>
-            </div>
+            </a>
 
             <!-- Adress 2 -->
-            <div class="data-block__box data-block__box--address">
+            <a
+              class="data-block__box data-block__box--address"
+              href="https://goo.gl/maps/mJedVkzUMWL2e5yT8"
+              target="_blank"
+            >
               <!-- Icon -->
               <div
                 class="data-block__icon data-block__icon--marker data-block__icon--marker--2"
@@ -253,7 +269,7 @@
 
               <!-- Text -->
               <p class="data-block__text">18 South Park, London</p>
-            </div>
+            </a>
           </div>
 
           <!-- Puppy image -->
