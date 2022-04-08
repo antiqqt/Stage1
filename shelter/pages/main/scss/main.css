@@ -768,6 +768,11 @@ a:hover {
   position: absolute;
   top: 60px;
 }
+@media (max-width: 1050px) {
+  .header--absolute {
+    top: 30px;
+  }
+}
 
 .logo {
   display: flex;
@@ -845,6 +850,7 @@ a:hover {
   padding-top: 164px;
 }
 .section--start__heading {
+  max-width: 40rem;
   margin-bottom: 42px;
   margin-left: 0;
   letter-spacing: normal;
@@ -916,10 +922,10 @@ a:hover {
   padding-right: 2.51em;
 }
 .section--friends__heading {
-  align-self: stretch;
+  width: 100%;
   margin-bottom: 58px;
-  margin-right: 33.341%;
-  margin-left: 33.341%;
+  padding-right: 33.334%;
+  padding-left: 33.334%;
   text-align: center;
 }
 .section--friends__slider {
@@ -933,14 +939,13 @@ a:hover {
 .section--help__container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 60px;
   padding-right: 7.25%;
   padding-left: 7.25%;
 }
 .section--help__heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 310px;
   text-align: center;
 }
 
@@ -964,6 +969,7 @@ a:hover {
   align-items: flex-start;
 }
 .section--donation__heading--h3 {
+  padding-right: 21.124%;
   margin-bottom: 17px;
 }
 .section--donation__heading--h5 {

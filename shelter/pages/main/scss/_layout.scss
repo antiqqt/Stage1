@@ -29,6 +29,10 @@
 .header--absolute {
   position: absolute;
   top: 60px;
+
+  @media (max-width: 1050px) {
+    top: 30px;
+  }
 }
 
 .logo {
@@ -122,6 +126,8 @@
   }
 
   &__heading {
+    max-width: 40rem; // To make proper line-break
+    
     margin-bottom: 42px;
     margin-left: 0;
     letter-spacing: normal;
@@ -205,10 +211,10 @@
   }
 
   &__heading {
-    align-self: stretch;
+    width: 100%;
     margin-bottom: 58px;
-    margin-right: 33.341%;
-    margin-left: 33.341%;
+    padding-right: 33.334%; // 400px
+    padding-left: 33.334%; // 400px
     text-align: center;
   }
 
@@ -224,6 +230,7 @@
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 60px;
 
     padding-right: 7.25%; // 87px
@@ -231,9 +238,7 @@
   }
 
   &__heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 310px;
     text-align: center;
   }
 }
@@ -262,6 +267,7 @@
 
   &__heading {
     &--h3 {
+      padding-right: 21.124%; // 80px
       margin-bottom: 17px; // Adjust to fit
     }
 
