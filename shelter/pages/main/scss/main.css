@@ -552,6 +552,67 @@ a:hover {
   line-height: 160%;
 }
 
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo__title {
+  font-family: "Georgia", Fallback, serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 110%;
+  color: #F1CDB3;
+}
+.logo__title--dark {
+  color: #545454;
+}
+.logo__subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.logo__subtitle--dark {
+  color: #292929;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-bottom: 1px;
+}
+.nav__link {
+  display: block;
+  line-height: 160%;
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.0042em;
+}
+.nav__link--dark {
+  color: #545454;
+}
+.nav__link--dark:hover {
+  color: #292929;
+}
+.nav__link--active {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+}
+.nav__link--active--dark {
+  color: #545454;
+}
+
 .slider {
   display: flex;
   align-items: center;
@@ -563,7 +624,6 @@ a:hover {
   display: flex;
   column-gap: 9.1%;
 }
-
 .card {
   display: flex;
   flex-direction: column;
@@ -740,6 +800,13 @@ a:hover {
   margin-right: 12.835%;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
 .body {
   display: flex;
   justify-content: center;
@@ -772,52 +839,6 @@ a:hover {
   .header--absolute {
     top: 30px;
   }
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.logo__title {
-  font-family: "Georgia", Fallback, serif;
-  font-size: 3.2rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 110%;
-  color: #F1CDB3;
-}
-.logo__subtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  line-height: 15px;
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-.nav__list {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  padding-bottom: 1px;
-}
-.nav__link {
-  display: block;
-  line-height: 160%;
-  border-bottom: 3px solid transparent;
-  letter-spacing: 0.0042em;
-}
-.nav__link--active {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
 }
 
 .main {
@@ -858,6 +879,11 @@ a:hover {
 .section--start__subheading {
   margin-bottom: 41px;
   color: #CDCDCD;
+}
+.section--start__button {
+  width: 207px;
+  height: 52px;
+  padding: 0;
 }
 .section--start__figure {
   margin: 0;

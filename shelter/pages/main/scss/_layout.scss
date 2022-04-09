@@ -35,61 +35,6 @@
   }
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  &__title {
-    font-family: $ff-heading;
-    font-size: $fs-logo-title;
-    font-weight: $fw-regular;
-    letter-spacing: 0.06em;
-    line-height: 110%;
-    color: $color-primary;
-  }
-
-  &__subtitle {
-    font-size: $fs-logo-subtitle;
-    font-weight: $fw-regular;
-    letter-spacing: 0.1em;
-    line-height: 15px;
-    text-align: center;
-    color: $color-light-xl;
-  }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    // Added to adjust link underline precisely
-    padding-bottom: 1px;
-  }
-
-  &__link {
-    display: block;
-    line-height: 160%;
-    border-bottom: 3px solid transparent;
-
-    // Added to adjust element precisely
-    letter-spacing: 0.0042em;
-  }
-
-  &__link--active {
-    color: $color-light-s;
-    border-bottom: 3px solid $color-primary;
-  }
-}
-
 // Main
 .main {
   flex-grow: 1;
@@ -136,6 +81,12 @@
   &__subheading {
     margin-bottom: 41px;
     color: $color-dark-s;
+  }
+
+  &__button {
+    width: 207px;
+    height: 52px;
+    padding: 0;
   }
 
   &__figure {
