@@ -203,14 +203,29 @@ a {
   column-gap: 4.45%; // 53px
   margin-bottom: 60px;
 
+  @media (max-width: $ss-large-light) {
+    column-gap: 0;
+    justify-content: space-between;
+  }
+
   &__container {
     flex-grow: 1;
-
     display: flex;
     column-gap: 9.1%; // 90px
+
+    @media (max-width: $ss-large-light) {
+      column-gap: 0;
+      justify-content: space-around;
+    }
   }
 
   &__card {
+    // Make 3rd card hidden on medium size screens
+    &:nth-child(3) {
+      @media (max-width: $ss-large-light) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -259,6 +274,12 @@ a {
   column-gap: 118.8px;
   row-gap: 55px;
 
+  @media (max-width: 1278px) {
+    display: grid;
+    grid-template-columns: repeat(3, 170px);
+    column-gap: 60px;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -267,10 +288,18 @@ a {
 
     &--6 {
       margin-left: 84px;
+
+      @media (max-width: 1278px) {
+        margin-left: 0;
+      }
     }
 
     &--9 {
       margin-right: 84px;
+
+      @media (max-width: 1278px) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -428,11 +457,21 @@ a {
 
   &--contacts {
     row-gap: 40px;
+    max-width: 278px;
     margin-right: 12.085%; // 145px
+
+    @media (max-width: $ss-large) {
+      margin-right: 0;
+    }
   }
 
   &--locations {
+    max-width: 302px;
     margin-right: 12.835%; // 154px
+
+    @media (max-width: $ss-large) {
+      margin-right: 0;
+    }
   }
 }
 
