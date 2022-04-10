@@ -660,7 +660,7 @@ a:hover {
 
 .header {
   width: 100%;
-  padding-right: 40px;
+  padding-right: 23px;
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
@@ -741,7 +741,7 @@ a:hover {
 
 .section {
   padding-top: 80px;
-  padding-right: 40px;
+  padding-right: 23px;
   padding-left: 40px;
 }
 .section--dark {
@@ -772,7 +772,7 @@ a:hover {
 
 .footer {
   padding-top: 40px;
-  padding-right: 40px;
+  padding-right: 23px;
   padding-left: 40px;
   background: url("../../../assets/images/main/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), linear-gradient(0deg, #211f20, #211f20);
 }
