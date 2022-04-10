@@ -457,21 +457,11 @@ a {
 
   &--contacts {
     row-gap: 40px;
-    max-width: 278px;
-    margin-right: 12.085%; // 145px
-
-    @media (max-width: $ss-large) {
-      margin-right: 0;
-    }
+    max-width: 279px;
   }
 
   &--locations {
     max-width: 302px;
-    margin-right: 12.835%; // 154px
-
-    @media (max-width: $ss-large) {
-      margin-right: 0;
-    }
   }
 }
 

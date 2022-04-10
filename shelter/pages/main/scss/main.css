@@ -829,22 +829,10 @@ a:hover {
 }
 .data-block--contacts {
   row-gap: 40px;
-  max-width: 278px;
-  margin-right: 12.085%;
-}
-@media (max-width: 1278px) {
-  .data-block--contacts {
-    margin-right: 0;
-  }
+  max-width: 279px;
 }
 .data-block--locations {
   max-width: 302px;
-  margin-right: 12.835%;
-}
-@media (max-width: 1278px) {
-  .data-block--locations {
-    margin-right: 0;
-  }
 }
 
 .pagination {
@@ -1046,7 +1034,7 @@ a:hover {
   flex-direction: column;
 }
 .section--friends__button {
-  max-width: 261px;
+  width: 261px;
   padding-left: 2.515em;
   padding-right: 2.51em;
 }
@@ -1148,10 +1136,15 @@ a:hover {
 }
 .footer__container {
   display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 1050px) {
   .footer__container {
     justify-content: space-around;
     flex-wrap: wrap;
   }
+}
+.footer__img {
+  display: block;
+  max-width: 300px;
 }

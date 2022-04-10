@@ -208,7 +208,7 @@
 
   &__button {
     // Adjust slightly
-    max-width: 261px;
+    width: 261px;
     padding-left: 2.515em;
     padding-right: 2.51em;
   }
@@ -324,10 +324,16 @@
 
   &__container {
     display: flex;
+    justify-content: space-between;
 
     @media (max-width: $ss-large-light) {
       justify-content: space-around;
       flex-wrap: wrap;
     }
+  }
+
+  &__img {
+    display: block;
+    max-width: 300px;
   }
 }
