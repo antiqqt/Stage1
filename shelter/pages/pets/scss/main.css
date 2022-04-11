@@ -846,6 +846,8 @@ a:hover {
   display: flex;
   justify-content: center;
   background-color: #FFFFFF;
+  width: 100vw;
+  overflow-x: hidden;
 }
 .body__container {
   display: flex;

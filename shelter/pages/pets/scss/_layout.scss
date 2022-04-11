@@ -5,6 +5,11 @@
   justify-content: center;
   background-color: $color-light-xl;
 
+  // make page account for scroll
+  // on desktop mode
+  width: 100vw;
+  overflow-x: hidden;
+
   &__container {
     display: flex;
     flex-direction: column;

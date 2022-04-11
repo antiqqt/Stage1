@@ -5,6 +5,11 @@
   justify-content: center;
   background-color: $color-light-xl;
 
+  // make page account for scroll
+  // on desktop mode
+  width: 100vw;
+  overflow-x: hidden;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -20,7 +25,7 @@
 
 .header {
   width: 100%;
-  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
+  padding-right: 40px;
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
@@ -47,7 +52,7 @@
 
 .section {
   padding-top: 80px;
-  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
+  padding-right: 40px;
   padding-left: 40px;
 
   &--dark {
@@ -310,7 +315,7 @@
 // Footer
 .footer {
   padding-top: 40px;
-  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
+  padding-right: 40px;
   padding-left: 40px;
   background: url('../../../assets/images/main/noise_transparent@2x.png'),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
