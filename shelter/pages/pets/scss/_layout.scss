@@ -5,6 +5,11 @@
   justify-content: center;
   background-color: $color-light-xl;
 
+  // make page account for scroll
+  // on desktop mode
+  width: 100vw;
+  overflow-x: hidden;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -16,7 +21,7 @@
 // Header
 .header {
   width: 100%;
-  padding-right: 40px;
+  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
@@ -33,82 +38,6 @@
   }
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  &__title {
-    font-family: $ff-heading;
-    font-size: $fs-logo-title;
-    font-weight: $fw-regular;
-    letter-spacing: 0.06em;
-    line-height: 110%;
-    color: $color-primary;
-
-    &--dark {
-      color: $color-dark-l;
-    }
-  }
-
-  &__subtitle {
-    font-size: $fs-logo-subtitle;
-    font-weight: $fw-regular;
-    letter-spacing: 0.1em;
-    line-height: 15px;
-    text-align: center;
-    color: $color-light-xl;
-
-    &--dark {
-      color: $color-dark-3xl;
-    }
-  }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    // Added to adjust link underline precisely
-    padding-bottom: 1px;
-  }
-
-  &__link {
-    display: block;
-    line-height: 160%;
-    border-bottom: 3px solid transparent;
-
-    // Added to adjust element precisely
-    letter-spacing: 0.0042em;
-
-    &--dark {
-      color: $color-dark-l;
-
-      // Change on hover
-      &:hover {
-        color: $color-dark-3xl;
-      }
-    }
-  }
-
-  &__link--active {
-    color: $color-light-s;
-    border-bottom: 3px solid $color-primary;
-
-    &--dark {
-      color: $color-dark-3xl;
-    }
-  }
-}
-
 // Main
 .main {
   flex-grow: 1;
@@ -116,7 +45,7 @@
 
 .section {
   padding-top: 80px;
-  padding-right: 40px;
+  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
   padding-left: 40px;
 
   &--dark {
@@ -152,13 +81,30 @@
 // Footer
 .footer {
   padding-top: 40px;
-  padding-right: 40px;
+  padding-right: calc(40px - 17px); // account for scrollbar on desktop(17px)
   padding-left: 40px;
   background: url('../../../assets/images/main/noise_transparent@2x.png'),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
     linear-gradient(0deg, #211f20, #211f20);
 
+  @media (max-width: $ss-large-light) {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
   &__container {
     display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $ss-large-light) {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 300px;
   }
 }
