@@ -208,6 +208,10 @@ a {
     justify-content: space-between;
   }
 
+  @media (max-width: $ss-medium) {
+    column-gap: 12px; //12px
+  }
+
   &__container {
     flex-grow: 1;
     display: flex;
@@ -216,6 +220,10 @@ a {
     @media (max-width: $ss-large-light) {
       column-gap: 0;
       justify-content: space-around;
+    }
+
+    @media (max-width: $ss-medium) {
+      justify-content: space-between;
     }
   }
 
@@ -387,6 +395,11 @@ a {
   justify-content: space-between;
   padding-top: 16px;
   padding-bottom: 60px;
+
+  @media (max-width: $ss-medium) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   &__heading {
     color: $color-light-xl;
