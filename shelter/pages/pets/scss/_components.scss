@@ -271,6 +271,7 @@ a {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   column-gap: 118.8px;
   row-gap: 55px;
 
@@ -285,22 +286,6 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 27px; // Adjusted to fit, original value: 30px
-
-    &--6 {
-      margin-left: 84px;
-
-      @media (max-width: 1278px) {
-        margin-left: 0;
-      }
-    }
-
-    &--9 {
-      margin-right: 84px;
-
-      @media (max-width: 1278px) {
-        margin-right: 0;
-      }
-    }
   }
 
   &__heading {
@@ -310,7 +295,7 @@ a {
     }
 
     &--4 {
-      padding-left: 1.17px;
+      padding-left: 2px;
     }
 
     &--5 {
