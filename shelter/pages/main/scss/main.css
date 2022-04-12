@@ -843,6 +843,13 @@ a:hover {
   align-items: center;
   column-gap: 20px;
 }
+.pagination__button:nth-child(3) {
+  cursor: default;
+}
+.pagination__button:nth-child(3):hover {
+  background-color: #F1CDB3;
+  border-color: #F1CDB3;
+}
 
 .body {
   display: flex;
