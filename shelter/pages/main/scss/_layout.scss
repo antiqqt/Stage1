@@ -261,10 +261,21 @@
       padding-right: 21.753%; // 154px
       padding-left: 21.753%; // 154px
     }
+
+    @media (max-width: $ss-medium-light) {
+      max-width: 400px;
+      margin-bottom: 42px;
+      padding: 0;
+    }
   }
 
   &__slider {
     align-self: stretch;
+    margin-bottom: 60px;
+
+    @media (max-width: $ss-medium-light) {
+      margin-bottom: 42px;
+    }
   }
 }
 
