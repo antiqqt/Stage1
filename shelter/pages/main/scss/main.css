@@ -625,6 +625,11 @@ a:hover {
     justify-content: space-between;
   }
 }
+@media (max-width: 768px) {
+  .slider {
+    column-gap: 12px;
+  }
+}
 .slider__container {
   flex-grow: 1;
   display: flex;
@@ -634,6 +639,11 @@ a:hover {
   .slider__container {
     column-gap: 0;
     justify-content: space-around;
+  }
+}
+@media (max-width: 768px) {
+  .slider__container {
+    justify-content: space-between;
   }
 }
 @media (max-width: 1050px) {
@@ -745,6 +755,7 @@ a:hover {
   padding: 10px 14.5px;
   background-color: #F1CDB3;
   border-radius: 9px;
+  transition: 0.4s;
 }
 .credit-card__icon {
   width: 30px;
@@ -759,8 +770,8 @@ a:hover {
   line-height: 115%;
   letter-spacing: 0.06em;
 }
-.credit-card__number:hover {
-  color: #545454;
+.credit-card:hover {
+  background-color: #FDDCC4;
 }
 
 .data-block {
@@ -769,6 +780,12 @@ a:hover {
   justify-content: space-between;
   padding-top: 16px;
   padding-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .data-block {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 .data-block__heading {
   color: #FFFFFF;
@@ -878,6 +895,12 @@ a:hover {
   padding-right: 40px;
   padding-left: 40px;
 }
+@media (max-width: 768px) {
+  .section {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
 .section--dark {
   background-color: #F6F6F6;
 }
@@ -890,7 +913,7 @@ a:hover {
 }
 @media (max-width: 1050px) {
   .section--start {
-    padding-top: 150px;
+    padding-top: 150.5px;
   }
 }
 .section--start__container {
@@ -919,6 +942,13 @@ a:hover {
     padding-left: 7.995%;
   }
 }
+@media (max-width: 768px) {
+  .section--start__content {
+    max-width: 570px;
+    padding-right: 7.77%;
+    padding-left: 7.77%;
+  }
+}
 .section--start__heading {
   max-width: 40rem;
   margin-bottom: 42px;
@@ -928,6 +958,11 @@ a:hover {
 .section--start__subheading {
   margin-bottom: 41px;
   color: #CDCDCD;
+}
+@media (max-width: 768px) {
+  .section--start__subheading {
+    margin-bottom: 41.5px;
+  }
 }
 .section--start__button {
   width: 207px;
@@ -944,7 +979,6 @@ a:hover {
 }
 @media (max-width: 1050px) {
   .section--start__figure {
-    position: relative;
     align-self: flex-end;
     max-width: 569px;
   }
@@ -954,8 +988,6 @@ a:hover {
 }
 @media (max-width: 1050px) {
   .section--start__img {
-    position: relative;
-    left: 10px;
     max-width: 569px;
     height: auto;
   }
@@ -964,6 +996,12 @@ a:hover {
 /* section About */
 .section--about {
   margin-bottom: 100px;
+}
+@media (max-width: 768px) {
+  .section--about {
+    display: flex;
+    justify-content: center;
+  }
 }
 .section--about__container {
   display: flex;
@@ -981,6 +1019,13 @@ a:hover {
     row-gap: 80px;
     padding-right: 25%;
     padding-left: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .section--about__container {
+    max-width: 430px;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 .section--about__figure {
@@ -1004,8 +1049,19 @@ a:hover {
   gap: 25px;
   padding: 14px 0;
 }
+@media (max-width: 768px) {
+  .section--about__content {
+    gap: 25px;
+    padding: 0;
+  }
+}
 .section--about__heading {
   padding-right: 1.72em;
+}
+@media (max-width: 768px) {
+  .section--about__heading {
+    height: 90px;
+  }
 }
 .section--about__subheading {
   color: #4C4C4C;
@@ -1031,6 +1087,12 @@ a:hover {
   padding-right: 33.334%;
   padding-left: 33.334%;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .section--friends__heading {
+    padding-right: 21.753%;
+    padding-left: 21.753%;
+  }
 }
 .section--friends__slider {
   align-self: stretch;
@@ -1070,8 +1132,18 @@ a:hover {
     row-gap: 60px;
   }
 }
+@media (max-width: 768px) {
+  .section--donation__container {
+    row-gap: 59px;
+  }
+}
 .section--donation__img {
   padding-top: 11px 0 10px;
+}
+@media (max-width: 768px) {
+  .section--donation__img {
+    padding-right: 1px;
+  }
 }
 .section--donation__content {
   display: flex;
@@ -1085,6 +1157,12 @@ a:hover {
     height: 282px;
   }
 }
+@media (max-width: 768px) {
+  .section--donation__content {
+    align-items: flex-start;
+    max-width: 380px;
+  }
+}
 .section--donation__heading--h3 {
   padding-right: 21.124%;
   margin-bottom: 17px;
@@ -1093,6 +1171,12 @@ a:hover {
   .section--donation__heading--h3 {
     padding-right: 0;
     text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .section--donation__heading--h3 {
+    padding-right: 21.124%;
+    text-align: left;
   }
 }
 .section--donation__heading--h5 {
@@ -1129,6 +1213,11 @@ a:hover {
   .footer__container {
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .footer__container {
+    row-gap: 64.5px;
   }
 }
 .footer__img {
