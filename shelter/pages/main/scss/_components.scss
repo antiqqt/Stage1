@@ -367,6 +367,7 @@ a {
   padding: 10px 14.5px;
   background-color: $color-primary;
   border-radius: 9px;
+  transition: .4s;
 
   &__icon {
     width: 30px;
@@ -381,10 +382,10 @@ a {
     font-weight: $fw-regular;
     line-height: 115%;
     letter-spacing: 0.06em;
+  }
 
-    &:hover {
-      color: $color-dark-l;
-    }
+  &:hover {
+    background-color: $color-primary-light;
   }
 }
 
