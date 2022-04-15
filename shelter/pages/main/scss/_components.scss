@@ -174,7 +174,6 @@ a {
       width: 320px;
       height: 823px;
       padding: 0;
-      background-color: $color-dark-3xl;
     }
   }
 
@@ -224,6 +223,7 @@ a {
     width: 0;
     top: -30px;
     right: 0;
+    background-color: $color-dark-3xl;
     transition: 0.4s ease-in-out;
     z-index: 1;
     overflow-x: hidden;

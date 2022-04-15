@@ -1,8 +1,8 @@
 'use strict';
 
 /*
-** WEEK 1
-*/
+ ** WEEK 1
+ */
 // Make button on 'Start screen' section
 // lead to the 'Our friends' section
 const sectionStartBtn = document.querySelector('.section--start__button');
@@ -20,21 +20,37 @@ sectionFriendsBtn.addEventListener('click', (e) => {
   window.location.assign('../pets');
 });
 
-
 // Sidebar menu
 function toggleSidebar() {
   const sideBar = document.querySelector('.nav--sidebar');
   sideBar.classList.toggle('nav--sidebar--active');
-  console.log('aba')
 }
+
+function closeSidebar() {
+  const sideBar = document.querySelector('.nav--sidebar');
+  sideBar.classList.remove('nav--sidebar--active');
+}
+
+// Burger button
+const burger = document.querySelector('.burger');
+
+burger.addEventListener('click', toggleSidebar);
+burger.addEventListener('click', toggleBurger);
 
 function toggleBurger() {
   const burger = document.querySelector('.burger');
   burger.classList.toggle('burger--active');
 }
 
-const burger = document.querySelector('.burger');
+function closeBurger() {
+  const burger = document.querySelector('.burger');
+  burger.classList.remove('burger--active');
+}
 
-burger.addEventListener('click', toggleSidebar);
-burger.addEventListener('click', toggleBurger);
-// Autocheck
+// Links in navbar
+const navLinks = document.querySelectorAll('.nav__link');
+
+navLinks.forEach((elem) => {
+  elem.addEventListener('click', closeSidebar);
+  elem.addEventListener('click', closeBurger);
+});
