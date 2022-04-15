@@ -29,10 +29,24 @@
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @media (max-width: $ss-large-light) {
     padding-right: 30px;
     padding-left: 30px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    padding-right: 50px;
+    padding-left: 10px;
+  }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+    }
   }
 }
 
@@ -155,6 +169,10 @@
       max-width: 569px;
       height: auto;
     }
+
+    @media (max-width: $ss-medium-light) {
+      width: 100%;
+    }
   }
 }
 
@@ -223,8 +241,10 @@
   &__heading {
     padding-right: 1.72em;
 
-    @media (max-width: $ss-medium) {
+    @media (max-width: $ss-large-light) {
+      width: 370px;
       height: 90px;
+      padding: 0;
     }
   }
 
@@ -257,14 +277,29 @@
     padding-left: 33.334%; // 400px
     text-align: center;
 
+    @media (max-width: $ss-large-light) {
+      padding: 0;
+    }
+
     @media (max-width: $ss-medium) {
       padding-right: 21.753%; // 154px
       padding-left: 21.753%; // 154px
+    }
+
+    @media (max-width: $ss-medium-light) {
+      max-width: 400px;
+      margin-bottom: 42px;
+      padding: 0;
     }
   }
 
   &__slider {
     align-self: stretch;
+    margin-bottom: 60px;
+
+    @media (max-width: $ss-medium-light) {
+      margin-bottom: 42px;
+    }
   }
 }
 
@@ -299,7 +334,7 @@
     padding-right: 11.92%; // 143px
     padding-left: 11.92%; // 143px
 
-    @media (max-width: $ss-large) {
+    @media (max-width: $ss-large-light) {
       flex-direction: column-reverse;
       row-gap: 60px;
     }
@@ -323,15 +358,9 @@
     flex-direction: column;
     align-items: flex-start;
 
-    @media (max-width: $ss-large) {
-      align-items: center;
-      max-width: 500px;
-      height: 282px;
-    }
-
-    @media (max-width: $ss-medium) {
-      align-items: flex-start;
+    @media (max-width: $ss-large-light) {
       max-width: 380px;
+      height: 282px;
     }
   }
 
@@ -340,14 +369,9 @@
       padding-right: 21.124%; // 80px
       margin-bottom: 17px; // Adjust to fit
 
-      @media (max-width: 1278px) {
-        padding-right: 0;
-        text-align: center;
-      }
-
-      @media (max-width: $ss-medium) {
-        padding-right: 21.124%; // 80px
-        text-align: left;
+      @media (max-width: $ss-large-light) {
+        width: 300px;
+        padding: 0;
       }
     }
 

@@ -123,6 +123,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
 
   &__title {
     font-family: $ff-heading;
@@ -163,18 +164,39 @@ a {
     margin: 0;
     padding: 0;
     list-style: none;
-
     // Added to adjust link underline precisely
     padding-bottom: 1px;
+
+    @media (max-width: $ss-medium-light) {
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 40px;
+      width: 320px;
+      height: 823px;
+      padding: 0;
+      background-color: $color-dark-3xl;
+    }
+  }
+
+  &__item {
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__link {
     display: block;
     line-height: 160%;
     border-bottom: 3px solid transparent;
-
     // Added to adjust element precisely
     letter-spacing: 0.0042em;
+
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-paragraph-mobile-menu;
+    }
 
     &--dark {
       color: $color-dark-l;
@@ -196,12 +218,47 @@ a {
   }
 }
 
+.nav--sidebar {
+  @media (max-width: $ss-medium-light) {
+    position: absolute;
+    width: 0;
+    top: -30px;
+    right: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+    overflow-x: hidden;
+
+    &--active {
+      width: 320px;
+    }
+  }
+}
+
+// Burger menu
+.burger {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: 1;
+
+  &__line {
+    width: 30px;
+    height: 2px;
+    background-color: $color-primary;
+  }
+
+  &--active {
+    transform: rotate(-90deg);
+  }
+}
+
 // Slider
 .slider {
   display: flex;
   align-items: center;
   column-gap: 4.45%; // 53px
-  margin-bottom: 60px;
 
   @media (max-width: $ss-large-light) {
     column-gap: 0;
@@ -212,6 +269,13 @@ a {
     column-gap: 12px; //12px
   }
 
+  @media (max-width: $ss-medium-light) {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 12%;
+    row-gap: 20px;
+  }
+
   &__container {
     flex-grow: 1;
     display: flex;
@@ -219,11 +283,16 @@ a {
 
     @media (max-width: $ss-large-light) {
       column-gap: 0;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
 
     @media (max-width: $ss-medium) {
       justify-content: space-between;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      width: 100%;
+      justify-content: center;
     }
   }
 
@@ -233,6 +302,18 @@ a {
       @media (max-width: $ss-large-light) {
         display: none;
       }
+    }
+
+    &:nth-child(2) {
+      @media (max-width: $ss-medium-light) {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    @media (max-width: $ss-medium-light) {
+      order: 1;
     }
   }
 }
@@ -283,10 +364,16 @@ a {
   column-gap: 118.8px;
   row-gap: 55px;
 
-  @media (max-width: 1278px) {
+  @media (max-width: $ss-large-light) {
     display: grid;
     grid-template-columns: repeat(3, 170px);
     column-gap: 60px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    grid-template-columns: repeat(2, 170px);
+    column-gap: 10%;
+    row-gap: 30px;
   }
 
   &__item {
@@ -367,7 +454,7 @@ a {
   padding: 10px 14.5px;
   background-color: $color-primary;
   border-radius: 9px;
-  transition: .4s;
+  transition: 0.4s;
 
   &__icon {
     width: 30px;
@@ -476,7 +563,7 @@ a {
 
     &:hover {
       background-color: $color-primary;
-      border-color:$color-primary;
+      border-color: $color-primary;
     }
   }
 }
