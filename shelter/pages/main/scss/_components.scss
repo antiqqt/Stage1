@@ -194,6 +194,7 @@ a {
     letter-spacing: 0.0042em;
 
     @media (max-width: $ss-medium-light) {
+      width: max-content;
       font-size: $fs-paragraph-mobile-menu;
     }
 
