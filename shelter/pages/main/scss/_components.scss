@@ -173,7 +173,17 @@ a {
       row-gap: 40px;
       width: 320px;
       height: 823px;
+      padding: 0;
       background-color: $color-dark-3xl;
+    }
+  }
+
+  &__item {
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 

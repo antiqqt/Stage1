@@ -601,7 +601,16 @@ a:hover {
     row-gap: 40px;
     width: 320px;
     height: 823px;
+    padding: 0;
     background-color: #292929;
+  }
+}
+@media (max-width: 767px) {
+  .nav__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 .nav__link {
