@@ -556,6 +556,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
 }
 .logo__title {
   font-family: "Georgia", Fallback, serif;
@@ -593,11 +594,26 @@ a:hover {
   list-style: none;
   padding-bottom: 1px;
 }
+@media (max-width: 767px) {
+  .nav__list {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 40px;
+    width: 320px;
+    height: 823px;
+    background-color: #292929;
+  }
+}
 .nav__link {
   display: block;
   line-height: 160%;
   border-bottom: 3px solid transparent;
   letter-spacing: 0.0042em;
+}
+@media (max-width: 767px) {
+  .nav__link {
+    font-size: 3.2rem;
+  }
 }
 .nav__link--dark {
   color: #545454;
@@ -611,6 +627,38 @@ a:hover {
 }
 .nav__link--active--dark {
   color: #292929;
+}
+
+@media (max-width: 767px) {
+  .nav--sidebar {
+    position: absolute;
+    width: 0;
+    top: -30px;
+    right: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+    overflow-x: hidden;
+  }
+  .nav--sidebar--active {
+    width: 320px;
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: 1;
+}
+.burger__line {
+  width: 30px;
+  height: 2px;
+  background-color: #F1CDB3;
+}
+.burger--active {
+  transform: rotate(-90deg);
 }
 
 .slider {
@@ -629,7 +677,7 @@ a:hover {
     column-gap: 12px;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .slider {
     flex-wrap: wrap;
     justify-content: center;
@@ -653,7 +701,7 @@ a:hover {
     justify-content: space-between;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .slider__container {
     width: 100%;
     justify-content: center;
@@ -664,12 +712,12 @@ a:hover {
     display: none;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .slider__card:nth-child(2) {
     display: none;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .slider__button {
     order: 1;
   }
@@ -719,7 +767,7 @@ a:hover {
     column-gap: 60px;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .grid {
     grid-template-columns: repeat(2, 170px);
     column-gap: 10%;
@@ -905,11 +953,26 @@ a:hover {
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 @media (max-width: 1279px) {
   .header {
     padding-right: 30px;
     padding-left: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    padding-right: 50px;
+    padding-left: 10px;
+  }
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .header__burger {
+    display: flex;
   }
 }
 
@@ -1029,6 +1092,11 @@ a:hover {
     height: auto;
   }
 }
+@media (max-width: 767px) {
+  .section--start__img {
+    width: 100%;
+  }
+}
 
 /* section About */
 .section--about {
@@ -1138,7 +1206,7 @@ a:hover {
     padding-left: 21.753%;
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .section--friends__heading {
     max-width: 400px;
     margin-bottom: 42px;
@@ -1149,7 +1217,7 @@ a:hover {
   align-self: stretch;
   margin-bottom: 60px;
 }
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   .section--friends__slider {
     margin-bottom: 42px;
   }

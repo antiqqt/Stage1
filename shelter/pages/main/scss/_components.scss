@@ -123,6 +123,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
 
   &__title {
     font-family: $ff-heading;
@@ -163,18 +164,29 @@ a {
     margin: 0;
     padding: 0;
     list-style: none;
-
     // Added to adjust link underline precisely
     padding-bottom: 1px;
+
+    @media (max-width: $ss-medium-light) {
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 40px;
+      width: 320px;
+      height: 823px;
+      background-color: $color-dark-3xl;
+    }
   }
 
   &__link {
     display: block;
     line-height: 160%;
     border-bottom: 3px solid transparent;
-
     // Added to adjust element precisely
     letter-spacing: 0.0042em;
+
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-paragraph-mobile-menu;
+    }
 
     &--dark {
       color: $color-dark-l;
@@ -193,6 +205,42 @@ a {
     &--dark {
       color: $color-dark-3xl;
     }
+  }
+}
+
+.nav--sidebar {
+  @media (max-width: $ss-medium-light) {
+    position: absolute;
+    width: 0;
+    top: -30px;
+    right: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+    overflow-x: hidden;
+
+    &--active {
+      width: 320px;
+    }
+  }
+}
+
+// Burger menu
+.burger {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: 1;
+
+  &__line {
+    width: 30px;
+    height: 2px;
+    background-color: $color-primary;
+  }
+
+  &--active {
+    transform: rotate(-90deg);
   }
 }
 
@@ -396,7 +444,7 @@ a {
   padding: 10px 14.5px;
   background-color: $color-primary;
   border-radius: 9px;
-  transition: .4s;
+  transition: 0.4s;
 
   &__icon {
     width: 30px;
@@ -505,7 +553,7 @@ a {
 
     &:hover {
       background-color: $color-primary;
-      border-color:$color-primary;
+      border-color: $color-primary;
     }
   }
 }

@@ -29,10 +29,24 @@
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @media (max-width: $ss-large-light) {
     padding-right: 30px;
     padding-left: 30px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    padding-right: 50px;
+    padding-left: 10px;
+  }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+    }
   }
 }
 
@@ -154,6 +168,10 @@
     @media (max-width: $ss-large-light) {
       max-width: 569px;
       height: auto;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      width: 100%;
     }
   }
 }
