@@ -225,7 +225,7 @@ a {
 
     @media (max-width: $ss-large-light) {
       column-gap: 0;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
 
     @media (max-width: $ss-medium) {
