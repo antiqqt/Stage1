@@ -1191,6 +1191,7 @@ a:hover {
 }
 @media (max-width: 767.9px) {
   .section--start__figure {
+    align-self: center;
     max-width: 260px;
   }
 }
