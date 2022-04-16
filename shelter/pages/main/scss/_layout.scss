@@ -13,7 +13,6 @@
   &__container {
     display: flex;
     flex-direction: column;
-    max-width: $max-width;
     width: 100%;
   }
 }
@@ -24,21 +23,29 @@
 }
 
 .header {
-  width: 100%;
-  padding-right: 40px;
-  padding-left: 40px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  width: 100%;
 
-  @media (max-width: $ss-large-light) {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  @media (max-width: $ss-medium-light) {
-    padding-right: 53px;
-    padding-left: 10px;
+    width: 100%;
+    max-width: $max-width;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    @media (max-width: $ss-large-light) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      padding-right: 53px;
+      padding-left: 10px;
+    }
   }
 
   &__burger {
@@ -62,9 +69,35 @@
 // Main
 .main {
   flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &--light {
+      background-color: $color-light-xl;
+    }
+
+    &--dark {
+      background-color: $color-light-l;
+    }
+
+    &--gradient {
+      background: url('../../../assets/images/main/noise_transparent@2x.png'),
+        radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+        linear-gradient(0deg, #211f20, #211f20);
+    }
+  }
 }
 
 .section {
+  width: 100%;
+  max-width: $max-width;
   padding-top: 80px;
   padding-right: 40px;
   padding-left: 40px;
@@ -79,19 +112,15 @@
     padding-right: 10px;
     padding-left: 10px;
   }
-
-  &--dark {
-    background-color: $color-light-l;
-  }
 }
 
 /* section Start-screen */
 .section--start {
   margin-bottom: 0;
   padding-top: 180px;
-  background: url('../../../assets/images/main/noise_transparent@2x.png'),
-    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
-    linear-gradient(0deg, #211f20, #211f20);
+  // background: url('../../../assets/images/main/noise_transparent@2x.png'),
+  //   radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+  //   linear-gradient(0deg, #211f20, #211f20);
 
   @media (max-width: $ss-large-light) {
     padding-top: 150.5px;
@@ -539,31 +568,28 @@
 
 // Footer
 .footer {
-  padding-top: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
+  display: flex;
+  justify-content: center;
   background: url('../../../assets/images/main/noise_transparent@2x.png'),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
     linear-gradient(0deg, #211f20, #211f20);
-
-  @media (max-width: $ss-large-light) {
-    padding-top: 30px;
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-
-  @media (max-width: $ss-medium-light) {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
 
   &__container {
     display: flex;
     justify-content: space-between;
 
+    width: 100%;
+    max-width: $max-width;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+
     @media (max-width: $ss-large-light) {
       justify-content: space-around;
       flex-wrap: wrap;
+      padding-top: 30px;
+      padding-right: 30px;
+      padding-left: 30px;
     }
 
     @media (max-width: $ss-medium) {
@@ -572,6 +598,8 @@
 
     @media (max-width: $ss-medium-light) {
       row-gap: 39px; // should be 65px but whatever
+      padding-right: 10px;
+      padding-left: 10px;
     }
   }
 
