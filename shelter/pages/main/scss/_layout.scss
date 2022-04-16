@@ -202,6 +202,10 @@
       align-self: center;
       max-width: 260px;
     }
+
+    @media (max-width: $ss-small) {
+      align-self: flex-end;
+    }
   }
 
   &__img {

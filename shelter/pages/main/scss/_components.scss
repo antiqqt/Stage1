@@ -1,613 +1,102 @@
-@use 'variables' as *;
-
-// Links
-a {
-  font-size: $fs-paragraph-l;
-  color: $color-dark-s;
-  text-decoration: none;
-  transition: 0.4s;
-
-  &:hover {
-    color: $color-light-s;
-    cursor: pointer;
-  }
+// Add local Fonts
+@font-face {
+  font-family: 'Arial';
+  src: url('../../../assets/fonts/Arial-ItalicMT.woff2') format('woff2'),
+      url('../../../assets/fonts/Arial-ItalicMT.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
-// Buttons
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 52px;
-  margin: 0;
-  padding-left: 2.53em;
-  padding-right: 2.53em;
-
-  font-family: $ff-heading;
-  font-weight: $fw-regular;
-  font-size: $fs-button;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: $color-dark-3xl;
-
-  background-color: $color-primary;
-  border: 2px solid $color-primary;
-  border-radius: 100px;
-
-  transition: all 0.4s;
-
-  &:hover {
-    background-color: $color-primary-light;
-    border-color: $color-primary-light;
-    cursor: pointer;
-  }
-
-  &--secondary {
-    background-color: transparent;
-  }
-
-  &--round {
-    width: 52px;
-    padding: 22px 19px 24px;
-
-    font-family: $ff-heading;
-    font-weight: $fw-regular;
-    font-size: $fs-h-4;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    background-color: transparent;
-  }
-
-  &--arrow {
-    padding: 24px 19px 23px;
-    &__arrow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  &--active {
-    background-color: $color-primary;
-  }
-
-  &--disabled {
-    color: $color-dark-s;
-    border-color: $color-dark-s;
-
-    &:hover {
-      color: $color-dark-s;
-      border-color: $color-dark-s;
-      background-color: transparent;
-      cursor: default;
-    }
-  }
+@font-face {
+  font-family: 'Arial';
+  src: url('../../../assets/fonts/ArialMT.woff2') format('woff2'),
+      url('../../../assets/fonts/ArialMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-// Headings
-.heading {
-  font-family: $ff-heading;
-  font-weight: $fw-regular;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-
-  &--h2 {
-    font-size: $fs-h-2;
-    color: $color-light-xl;
-  }
-
-  &--h3 {
-    font-size: $fs-h-3;
-    color: $color-dark-l;
-
-    @media (max-width: $ss-medium-light) {
-      font-size: $fs-h-3-mobile;
-    }
-  }
-
-  &--h4 {
-    font-size: $fs-h-4;
-    color: $color-dark-l;
-  }
-
-  &--h5 {
-    font-size: $fs-h-5;
-    color: $color-dark-l;
-  }
+@font-face {
+  font-family: 'Georgia';
+  src: url('../../../assets/fonts/Georgia-Italic.woff2') format('woff2'),
+      url('../../../assets/fonts/Georgia-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
-.subheading {
-  font-size: $fs-paragraph-l;
-  line-height: 160%;
+@font-face {
+  font-family: 'Georgia';
+  src: url('../../../assets/fonts/Georgia.woff2') format('woff2'),
+      url('../../../assets/fonts/Georgia.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-// Logo block
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 2;
-
-  &__title {
-    font-family: $ff-heading;
-    font-size: $fs-logo-title;
-    font-weight: $fw-regular;
-    letter-spacing: 0.06em;
-    line-height: 110%;
-    color: $color-primary;
-
-    &--dark {
-      color: $color-dark-l;
-    }
-  }
-
-  &__subtitle {
-    font-size: $fs-logo-subtitle;
-    font-weight: $fw-regular;
-    letter-spacing: 0.1em;
-    line-height: 15px;
-    text-align: center;
-    color: $color-light-xl;
-
-    &--dark {
-      color: $color-dark-3xl;
-    }
-  }
+@font-face {
+  font-family: 'Georgia';
+  src: url('../../../assets/fonts/Georgia-Bold.woff2') format('woff2'),
+      url('../../../assets/fonts/Georgia-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-// Navbar
-.nav {
-  display: flex;
-  align-items: center;
+// FONTS
+  // font-family
+$ff-main: 'Arial', Fallback, sans-serif;
+$ff-heading: 'Georgia', Fallback, serif;
 
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    // Added to adjust link underline precisely
-    padding-bottom: 1px;
+  // font-size
+$fs-h-2: 4.4rem;
+$fs-h-3: 3.5rem;
+$fs-h-3-mobile: 2.5rem;
+$fs-h-4: 2rem;
+$fs-h-5: 1.5rem;
+$fs-h-5-modal-window: 1.5rem;
 
-    @media (max-width: $ss-medium-light) {
-      flex-direction: column;
-      justify-content: center;
-      row-gap: 40px;
-      width: 320px;
-      height: 823px;
-      padding: 0;
-    }
-  }
+$fs-paragraph-s: 1.2rem;
+$fs-paragraph-l: 1.5rem;
+$fs-paragraph-mobile-menu: 3.2rem;
 
-  &__item {
-    @media (max-width: $ss-medium-light) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-  }
+$fs-logo-title: 3.2rem;
+$fs-logo-subtitle: 1.3rem;
 
-  &__link {
-    display: block;
-    line-height: 160%;
-    border-bottom: 3px solid transparent;
-    // Added to adjust element precisely
-    letter-spacing: 0.0042em;
+$fs-card-heading: 2rem;
 
-    @media (max-width: $ss-medium-light) {
-      width: max-content;
-      font-size: $fs-paragraph-mobile-menu;
-    }
+$fs-button: 17px;
 
-    &--dark {
-      color: $color-dark-l;
 
-      // Change on hover
-      &:hover {
-        color: $color-dark-3xl;
-      }
-    }
-  }
+  // font-weight
+$fw-regular: 400;
 
-  &__link--active {
-    color: $color-light-s;
-    border-bottom: 3px solid $color-primary;
 
-    &--dark {
-      color: $color-dark-3xl;
-    }
-  }
-}
+// Colors
+$color-light-xl: #FFFFFF;
+$color-light-l: #F6F6F6;
+$color-light-s: #FAFAFA;
 
-.nav--sidebar {
-  @media (max-width: $ss-medium-light) {
-    position: absolute;
-    width: 0;
-    top: -30px;
-    right: 0;
-    background-color: $color-dark-3xl;
-    transition: 0.4s ease-in-out;
-    z-index: 1;
-    overflow-x: hidden;
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
 
-    &--active {
-      width: 320px;
-    }
-  }
-}
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
 
-// Burger menu
-.burger {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  transition: 0.4s;
-  cursor: pointer;
-  z-index: 1;
+$color-burger-dark: #000000;
 
-  &__line {
-    width: 30px;
-    height: 2px;
-    background-color: $color-primary;
-  }
+// Containers
+$max-width: 1280px;
 
-  &--active {
-    transform: rotate(-90deg);
-  }
-}
 
-// Slider
-.slider {
-  display: flex;
-  align-items: center;
-  column-gap: 4.45%; // 53px
-
-  @media (max-width: $ss-large-light) {
-    column-gap: 0;
-    justify-content: space-between;
-  }
-
-  @media (max-width: $ss-medium) {
-    column-gap: 12px; //12px
-  }
-
-  @media (max-width: $ss-medium-light) {
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 12%;
-    row-gap: 20px;
-  }
-
-  @media (max-width: $ss-small) {
-    column-gap: 26%;
-  }
-
-  &__container {
-    flex-grow: 1;
-    display: flex;
-    column-gap: 9.1%; // 90px
-
-    @media (max-width: $ss-large-light) {
-      column-gap: 0;
-      justify-content: space-evenly;
-    }
-
-    @media (max-width: $ss-medium) {
-      justify-content: space-between;
-    }
-
-    @media (max-width: $ss-medium-light) {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-
-  &__card {
-    // Make 3rd card hidden on medium size screens
-    &:nth-child(3) {
-      @media (max-width: $ss-large-light) {
-        display: none;
-      }
-    }
-
-    &:nth-child(2) {
-      @media (max-width: $ss-medium-light) {
-        display: none;
-      }
-    }
-  }
-
-  &__button {
-    @media (max-width: $ss-medium-light) {
-      order: 1;
-    }
-  }
-}
-
-// Cards
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding-bottom: 30px;
-  background-color: $color-light-s;
-  border-radius: 9px;
-
-  transition: 0.4s;
-  overflow: hidden; // To make corners not ugly
-
-  &__heading {
-    font-family: $ff-heading;
-    font-weight: $fw-regular;
-    font-size: $fs-card-heading;
-    line-height: 23px;
-    letter-spacing: 0.06em;
-    text-align: center;
-    color: $color-dark-l;
-  }
-
-  &:hover {
-    background-color: $color-light-xl;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-    cursor: pointer;
-
-    // To make button background look
-    // as if we hovered over the button,
-    // not the card itself
-    > .button {
-      background-color: $color-primary-light;
-      border-color: $color-primary-light;
-    }
-  }
-}
-
-// Item grid
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 118.8px;
-  row-gap: 55px;
-
-  @media (max-width: $ss-large-light) {
-    display: grid;
-    grid-template-columns: repeat(3, 170px);
-    column-gap: 60px;
-  }
-
-  @media (max-width: $ss-medium-light) {
-    grid-template-columns: repeat(2, 130px);
-    column-gap: 30px;
-    row-gap: 30px;
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 27px; // Adjusted to fit, original value: 30px
-
-    @media (max-width: $ss-medium-light) {
-      gap: 20px;
-      height: 87px;
-    }
-  }
-
-  &__heading {
-    @media (max-width: $ss-medium-light) {
-      font-size: $fs-h-5;
-      white-space: nowrap;
-    }
-
-    // Precise adjustments
-    &--3 {
-      padding-left: 3px;
-    }
-
-    &--4 {
-      padding-left: 2px;
-    }
-
-    &--5 {
-      padding-left: 1px;
-    }
-
-    &--8 {
-      padding-left: 1px;
-    }
-  }
-
-  &__icon {
-    width: 60px;
-    height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    @media (max-width: $ss-medium-light) {
-      width: 50px;
-      height: 50px;
-    }
-
-    &--1 {
-      background-image: url('../../../assets/icons/icon-pet-food.svg');
-    }
-
-    &--2 {
-      background-image: url('../../../assets/icons/icon-transportation.svg');
-    }
-
-    &--3 {
-      background-image: url('../../../assets/icons/icon-toys.svg');
-    }
-
-    &--4 {
-      background-image: url('../../../assets/icons/icon-bowls-and-cups.svg');
-    }
-
-    &--5 {
-      background-image: url('../../../assets/icons/icon-shampoos.svg');
-    }
-
-    &--6 {
-      background-image: url('../../../assets/icons/icon-vitamins.svg');
-    }
-
-    &--7 {
-      background-image: url('../../../assets/icons/icon-medicines.svg');
-    }
-
-    &--8 {
-      background-image: url('../../../assets/icons/icon-collars-leashes.svg');
-    }
-
-    &--9 {
-      background-image: url('../../../assets/icons/icon-sleeping-area.svg');
-    }
-  }
-}
-
-// Credit card
-.credit-card {
-  display: flex;
-  align-items: center;
-  column-gap: 15px;
-  padding: 10px 14.5px;
-  background-color: $color-primary;
-  border-radius: 9px;
-  transition: 0.4s;
-
-  &__icon {
-    width: 30px;
-    height: 23px;
-    background-image: url('../../../assets/icons/credit-card.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  &__number {
-    font-family: $ff-heading;
-    font-weight: $fw-regular;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-
-    @media (max-width: $ss-medium-light) {
-      font-size: $fs-h-5;
-    }
-  }
-
-  &:hover {
-    background-color: $color-primary-light;
-  }
-}
-
-// Data blocks in footer
-.data-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 16px;
-  padding-bottom: 60px;
-
-  @media (max-width: $ss-medium) {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  @media (max-width: $ss-medium-light) {
-    justify-content: center;
-    align-items: center;
-    row-gap: 40px;
-  }
-
-  &__heading {
-    color: $color-light-xl;
-
-    @media (max-width: $ss-medium-light) {
-      max-width: 270px;
-      text-align: center;
-    }
-  }
-
-  &__box {
-    display: flex;
-    column-gap: 20px;
-
-    &--phone {
-      align-items: center;
-    }
-
-    &--address {
-      align-items: center;
-
-      @media (max-width: $ss-medium-light) {
-        width: 100%;
-      }
-    }
-  }
-
-  &__icon {
-    width: 40px;
-    height: 32px;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    &--mail {
-      background-image: url('../../../assets/icons/footer/icon-email.svg');
-    }
-
-    &--phone {
-      background-image: url('../../../assets/icons/footer/icon-phone.svg');
-    }
-
-    &--marker {
-      background-image: url('../../../assets/icons/footer/icon-marker.svg');
-
-      &--2 {
-        width: 22px;
-      }
-    }
-  }
-
-  &__text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: $ff-heading;
-    font-weight: $fw-regular;
-    font-size: $fs-h-4;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: $color-primary;
-  }
-
-  &--contacts {
-    row-gap: 40px;
-    max-width: 279px;
-  }
-
-  &--locations {
-    max-width: 302px;
-  }
-}
-
-// Pagination on pets page
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 20px;
-
-  &__button:nth-child(3) {
-    cursor: default;
-
-    &:hover {
-      background-color: $color-primary;
-      border-color: $color-primary;
-    }
-  }
-}
+// Screensizes 
+$ss-large: 1280px;
+$ss-large-light: 1279.9px;
+$ss-medium: 768px;
+$ss-medium-light: 767.9px;
+$ss-small: 320px;

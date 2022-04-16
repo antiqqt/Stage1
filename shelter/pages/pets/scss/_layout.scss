@@ -29,18 +29,37 @@
   padding-left: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  &--pets {
-    width: inherit;
-    max-width: $max-width;
-    position: fixed;
-    top: 0;
-
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-    background-color: $color-light-xl;
+  @media (max-width: $ss-large-light) {
+    padding-right: 30px;
+    padding-left: 30px;
   }
+
+  @media (max-width: $ss-medium-light) {
+    padding-right: 53px;
+    padding-left: 10px;
+  }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+    }
+  }
+}
+
+.header--pets {
+  width: inherit;
+  max-width: $max-width;
+  position: fixed;
+  top: 0;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background-color: $color-light-xl;
 }
 
 // Main
@@ -53,20 +72,48 @@
   padding-right: 40px;
   padding-left: 40px;
 
+  @media (max-width: $ss-medium) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    padding-top: 42px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   &--dark {
     background-color: $color-light-l;
   }
 }
 
 .section--pets {
-  padding-top: calc(120px + 80px); // usual padding + height of header
+  padding-top: calc(120px + 80px); // own padding + height of header
   padding-bottom: 100px;
+
+  @media (max-width: $ss-medium) {
+    padding-bottom: 76.5px; // should be 76px
+  }
+
+  @media (max-width: $ss-medium-light) {
+    padding-top: calc(120px + 42px); // own padding + height of header
+    padding-bottom: 42.5px; // should be 42px
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 45px;
+
+    @media (max-width: $ss-medium) {
+      row-gap: 29px; // should be 30px according to figma
+    }
+
+    @media (max-width: $ss-medium-light) {
+      row-gap: 41px; // should be 42px according to figma
+    }
   }
 
   &__heading {
@@ -80,6 +127,36 @@
     row-gap: 30px;
     padding-top: 14px;
     padding-bottom: 15px;
+
+    @media (max-width: $ss-large-light) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0;
+    }
+
+    @media (max-width: $ss-medium) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      grid-template-columns: 1fr;
+      margin-bottom: 0;
+    }
+
+    // Hide every card after 6th
+    // on screens <= 1279px
+    & > :nth-child(n + 7) {
+      @media (max-width: $ss-large-light) {
+        display: none;
+      }
+    }
+
+    // Hide every card after 3th
+    // on screens <= 1279px 
+    & > :nth-child(n + 4) {
+      @media (max-width: $ss-medium-light) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -98,6 +175,11 @@
     padding-left: 30px;
   }
 
+  @media (max-width: $ss-medium-light) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -106,10 +188,22 @@
       justify-content: space-around;
       flex-wrap: wrap;
     }
+
+    @media (max-width: $ss-medium) {
+      row-gap: 64.5px; // should be 65px but whatever
+    }
+
+    @media (max-width: $ss-medium-light) {
+      row-gap: 39px; // should be 65px but whatever
+    }
   }
 
   &__img {
     display: block;
     max-width: 300px;
+
+    @media (max-width: $ss-medium-light) {
+      max-width: 260px;
+    }
   }
 }
