@@ -100,6 +100,10 @@ a {
   &--h3 {
     font-size: $fs-h-3;
     color: $color-dark-l;
+
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-h-3-mobile;
+    }
   }
 
   &--h4 {
@@ -194,6 +198,7 @@ a {
     letter-spacing: 0.0042em;
 
     @media (max-width: $ss-medium-light) {
+      width: max-content;
       font-size: $fs-paragraph-mobile-menu;
     }
 
@@ -231,6 +236,10 @@ a {
     &--active {
       width: 320px;
     }
+
+    &--light {
+      background-color: $color-light-l;
+    }
   }
 }
 
@@ -238,7 +247,7 @@ a {
 .burger {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 8px;
   transition: 0.4s;
   cursor: pointer;
   z-index: 1;
@@ -247,6 +256,10 @@ a {
     width: 30px;
     height: 2px;
     background-color: $color-primary;
+
+    &--dark {
+      background-color: $color-burger-dark;
+    }
   }
 
   &--active {
@@ -274,6 +287,10 @@ a {
     justify-content: center;
     column-gap: 12%;
     row-gap: 20px;
+  }
+
+  @media (max-width: $ss-small) {
+    column-gap: 26%;
   }
 
   &__container {
@@ -371,8 +388,8 @@ a {
   }
 
   @media (max-width: $ss-medium-light) {
-    grid-template-columns: repeat(2, 170px);
-    column-gap: 10%;
+    grid-template-columns: repeat(2, 130px);
+    column-gap: 30px;
     row-gap: 30px;
   }
 
@@ -381,9 +398,19 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 27px; // Adjusted to fit, original value: 30px
+
+    @media (max-width: $ss-medium-light) {
+      gap: 20px;
+      height: 87px;
+    }
   }
 
   &__heading {
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-h-5;
+      white-space: nowrap;
+    }
+
     // Precise adjustments
     &--3 {
       padding-left: 3px;
@@ -407,6 +434,11 @@ a {
     height: 60px;
     background-size: contain;
     background-repeat: no-repeat;
+
+    @media (max-width: $ss-medium-light) {
+      width: 50px;
+      height: 50px;
+    }
 
     &--1 {
       background-image: url('../../../assets/icons/icon-pet-food.svg');
@@ -469,6 +501,10 @@ a {
     font-weight: $fw-regular;
     line-height: 115%;
     letter-spacing: 0.06em;
+
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-h-5;
+    }
   }
 
   &:hover {
@@ -489,8 +525,19 @@ a {
     padding-bottom: 0;
   }
 
+  @media (max-width: $ss-medium-light) {
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+  }
+
   &__heading {
     color: $color-light-xl;
+
+    @media (max-width: $ss-medium-light) {
+      max-width: 270px;
+      text-align: center;
+    }
   }
 
   &__box {
@@ -503,6 +550,10 @@ a {
 
     &--address {
       align-items: center;
+
+      @media (max-width: $ss-medium-light) {
+        width: 100%;
+      }
     }
   }
 
@@ -522,6 +573,7 @@ a {
 
     &--marker {
       background-image: url('../../../assets/icons/footer/icon-marker.svg');
+
       &--2 {
         width: 22px;
       }
@@ -557,6 +609,10 @@ a {
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+
+  @media (max-width: $ss-medium-light) {
+    column-gap: 10px;
+  }
 
   &__button:nth-child(3) {
     cursor: default;
