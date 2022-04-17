@@ -585,18 +585,27 @@
     padding-left: 40px;
 
     @media (max-width: $ss-large-light) {
-      justify-content: space-around;
-      flex-wrap: wrap;
+      // justify-content: space-around;
+      // flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+
       padding-top: 30px;
-      padding-right: 30px;
-      padding-left: 30px;
+      padding-right: calc(30px + 4.429%);
+      padding-left: calc(30px + 4.429%);
     }
 
     @media (max-width: $ss-medium) {
-      row-gap: 64.5px; // should be 65px but whatever
+      justify-items: start;
+      column-gap: 39px;
+      row-gap: 64px; // should be 65px but whatever
     }
 
     @media (max-width: $ss-medium-light) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
       row-gap: 39px; // should be 65px but whatever
       padding-right: 10px;
       padding-left: 10px;
@@ -607,7 +616,13 @@
     display: block;
     max-width: 300px;
 
+    @media (max-width: $ss-large-light) {
+      grid-column: span 2; 
+      justify-self: center;
+    }
+
     @media (max-width: $ss-medium-light) {
+      grid-column: auto; 
       max-width: 260px;
     }
   }
