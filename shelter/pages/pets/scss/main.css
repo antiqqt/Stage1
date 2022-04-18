@@ -510,6 +510,9 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+.button--arrow__arrow--left {
+  transform: rotate(180deg);
+}
 .button--active {
   background-color: #F1CDB3;
 }

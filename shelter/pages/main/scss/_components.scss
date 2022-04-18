@@ -61,10 +61,15 @@ a {
 
   &--arrow {
     padding: 24px 19px 23px;
+
     &__arrow {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      &--left {
+        transform: rotate(180deg);
+      }
     }
   }
 
