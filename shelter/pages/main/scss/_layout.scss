@@ -391,6 +391,7 @@
     padding-right: 33.334%; // 400px
     padding-left: 33.334%; // 400px
     text-align: center;
+    white-space: nowrap;
 
     @media (max-width: $ss-large-light) {
       padding: 0;
