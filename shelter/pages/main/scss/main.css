@@ -1391,6 +1391,7 @@ a:hover {
   padding-right: 33.334%;
   padding-left: 33.334%;
   text-align: center;
+  white-space: nowrap;
 }
 @media (max-width: 1279.9px) {
   .section--friends__heading {
