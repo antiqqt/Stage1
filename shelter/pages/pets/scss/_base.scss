@@ -25,14 +25,14 @@ inherit from the parent box-sizing
 }
 
 /* Make sure children take 
-full height of its partent */
+full height of its parent */
 html,
 body {
   height: 100%;
   min-height: 100vh;
 }
 
-/* Clear defaukt html margins */
+/* Clear default html margins */
 body,
 h1,
 h2,

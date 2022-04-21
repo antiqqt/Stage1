@@ -25,6 +25,8 @@ sectionFriendsBtn.addEventListener('click', (e) => {
  ** WEEK 3
  */
 
+// SIDEBAR
+
 // Elements
 const sideBar = document.querySelector('.nav--sidebar');
 const burgerBtn = document.querySelector('.burger');
@@ -40,7 +42,6 @@ burgerBtn.addEventListener('click', toggleHeaderLogo);
 burgerBtn.addEventListener('click', toggleOverlay);
 burgerBtn.addEventListener('click', toggleScrollOnBody);
 
-
 navLinks.forEach((elem) => {
   elem.addEventListener('click', closeSidebar);
   elem.addEventListener('click', closeBurger);
@@ -48,7 +49,6 @@ navLinks.forEach((elem) => {
   elem.addEventListener('click', closeOverlay);
   elem.addEventListener('click', toggleScrollOnBody);
 });
-
 
 overlay.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeBurger);

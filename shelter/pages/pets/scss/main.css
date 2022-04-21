@@ -398,14 +398,14 @@ inherit from the parent box-sizing
 }
 
 /* Make sure children take 
-full height of its partent */
+full height of its parent */
 html,
 body {
   height: 100%;
   min-height: 100vh;
 }
 
-/* Clear defaukt html margins */
+/* Clear default html margins */
 body,
 h1,
 h2,
@@ -588,10 +588,23 @@ a:hover {
 .logo__subtitle--dark {
   color: #292929;
 }
+.logo--hidden {
+  display: none;
+}
 
 .nav {
   display: flex;
   align-items: center;
+}
+.nav__logo {
+  display: none;
+}
+@media (max-width: 767.9px) {
+  .nav__logo {
+    display: flex;
+    align-self: flex-start;
+    width: max-content;
+  }
 }
 .nav__list {
   display: flex;
@@ -608,7 +621,6 @@ a:hover {
     justify-content: center;
     row-gap: 40px;
     width: 320px;
-    height: 823px;
     padding: 0;
   }
 }
@@ -649,20 +661,43 @@ a:hover {
 @media (max-width: 767.9px) {
   .nav--sidebar {
     position: absolute;
-    width: 0;
     top: -30px;
     right: 0;
+    flex-direction: column;
+    row-gap: 158px;
+    padding-top: 30px;
+    width: 0;
+    height: 100vh;
     background-color: #292929;
     transition: 0.4s ease-in-out;
-    z-index: 1;
+    z-index: 2;
     overflow-x: hidden;
   }
   .nav--sidebar--active {
     width: 320px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   .nav--sidebar--light {
     background-color: #FFFFFF;
   }
+  .nav--sidebar--fixed {
+    position: fixed;
+    top: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: #292929;
+  opacity: 0.6;
+  z-index: 1;
+}
+.overlay--active {
+  display: block;
+  cursor: pointer;
 }
 
 .burger {
@@ -671,7 +706,7 @@ a:hover {
   row-gap: 8px;
   transition: 0.4s;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 }
 .burger__line {
   width: 30px;
@@ -1016,6 +1051,9 @@ a:hover {
   flex-direction: column;
   width: 100%;
 }
+.body--scroll-disabled {
+  overflow: hidden;
+}
 
 .header-wrapper {
   width: 100vw;
@@ -1034,6 +1072,7 @@ a:hover {
   max-width: 1280px;
   padding-right: 40px;
   padding-left: 40px;
+  position: relative;
 }
 @media (max-width: 1279.9px) {
   .header__container {
@@ -1043,6 +1082,7 @@ a:hover {
 }
 @media (max-width: 767.9px) {
   .header__container {
+    height: 60px;
     padding-right: 53px;
     padding-left: 10px;
   }
@@ -1052,7 +1092,15 @@ a:hover {
 }
 @media (max-width: 767.9px) {
   .header__burger {
+    position: absolute;
+    right: 53px;
     display: flex;
+  }
+}
+@media (max-width: 767.9px) {
+  .header__burger--fixed {
+    position: fixed;
+    top: 49px;
   }
 }
 
@@ -1063,6 +1111,10 @@ a:hover {
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #FFFFFF;
+}
+
+.header--active {
+  position: absolute;
 }
 
 .main {
