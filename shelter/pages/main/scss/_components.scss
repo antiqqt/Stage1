@@ -120,6 +120,14 @@ a {
     font-size: $fs-h-5;
     color: $color-dark-l;
   }
+
+  &--h5-modal-window {
+    font-size: $fs-h-5-modal-window;
+    color: $color-dark-4xl;
+    font-weight: $fw-bold;
+    font-style: normal;
+    text-transform: capitalize;
+  }
 }
 
 .subheading {
@@ -159,12 +167,25 @@ a {
       color: $color-dark-3xl;
     }
   }
+
+  &--hidden {
+    display: none;
+  }
 }
 
 // Navbar
 .nav {
   display: flex;
   align-items: center;
+
+  &__logo {
+    display: none;
+    @media (max-width: $ss-medium-light) {
+      display: flex;
+      align-self: flex-start;
+      width: max-content;
+    }
+  }
 
   &__list {
     display: flex;
@@ -181,7 +202,6 @@ a {
       justify-content: center;
       row-gap: 40px;
       width: 320px;
-      height: 823px;
       padding: 0;
     }
   }
@@ -230,21 +250,43 @@ a {
 .nav--sidebar {
   @media (max-width: $ss-medium-light) {
     position: absolute;
-    width: 0;
     top: -30px;
     right: 0;
+
+    flex-direction: column;
+    row-gap: 158px;
+    padding-top: 30px;
+    width: 0;
+    height: 100vh;
     background-color: $color-dark-3xl;
     transition: 0.4s ease-in-out;
-    z-index: 1;
+    z-index: 2;
     overflow-x: hidden;
 
     &--active {
       width: 320px;
+      padding-right: 10px;
+      padding-left: 10px;
     }
 
     &--light {
-      background-color: $color-light-l;
+      background-color: $color-light-xl;
     }
+  }
+}
+
+// Blackout overlay
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: $color-dark-3xl;
+  opacity: 0.6;
+  z-index: 1;
+
+  &--active {
+    display: block;
+    cursor: pointer;
   }
 }
 
@@ -255,7 +297,7 @@ a {
   row-gap: 8px;
   transition: 0.4s;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 
   &__line {
     width: 30px;
@@ -625,6 +667,159 @@ a {
     &:hover {
       background-color: $color-primary;
       border-color: $color-primary;
+    }
+  }
+}
+
+// Popup window
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 900px;
+  min-height: 500px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  @media (max-width: $ss-large-light) {
+    width: 630px;
+    min-height: 350px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    width: 240px;
+    min-height: 341px;
+  }
+
+  &__img {
+    display: block;
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+    object-fit: fill;
+
+    @media (max-width: $ss-large-light) {
+      width: 350px;
+      height: 350px;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      display: none;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: -42px;
+    top: -52px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  &__cross {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../assets/icons/cross-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 50px 20px 88px 29px;
+
+  @media (max-width: $ss-large-light) {
+    padding: 10px 10px 25px;
+  }
+
+  @media (max-width: $ss-medium-light) {
+    padding: 10px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    color: $color-dark-4xl;
+
+    @media (max-width: $ss-medium-light) {
+      font-size: $fs-h-3;
+      text-align: center;
+    }
+  }
+
+  &__type {
+    margin-bottom: 40px;
+    line-height: 115%;
+    color: $color-dark-4xl;
+
+    @media (max-width: $ss-large-light) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin-bottom: 38px;
+    font-family: $ff-heading;
+    font-size: $fs-paragraph-l;
+    color: $color-dark-4xl;
+    letter-spacing: 0.06em;
+
+    @media (max-width: $ss-large-light) {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: $ss-medium-light) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  list-style: none;
+
+  @media (max-width: $ss-large-light) {
+    row-gap: 5px;
+  }
+
+  &__item {
+    position: relative;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $color-dark-4xl;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -15px;
+      width: 4px;
+      height: 4px;
+      background-color: $color-primary;
+      border-radius: 50%;
     }
   }
 }

@@ -16,10 +16,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles/style.css" />
     <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
   </head>
   <body class="body">
     <div class="body__container">
+      <!-- Blackout Overlay -->
+      <div class="overlay overlay--sidebar"></div>
+
       <!-- Header -->
       <div class="header-wrapper">
         <header class="header header--pets">
@@ -33,7 +36,18 @@
             </a>
 
             <!-- Navigation -->
-            <nav class="nav nav--sidebar nav--sidebar--light header__nav">
+            <nav
+              class="nav nav--sidebar nav--sidebar--light nav--sidebar--fixed header__nav"
+            >
+              <!-- Sidebar logo -->
+              <a class="logo nav__logo" href="../main">
+                <p class="logo__title logo__title--dark">Cozy House</p>
+                <p class="logo__subtitle logo__subtitle--dark">
+                  Shelter for pets in Boston
+                </p>
+              </a>
+
+              <!-- Navbar links -->
               <ul class="nav__list">
                 <li class="nav__item">
                   <a class="nav__link nav__link--dark" href="../main/">
@@ -65,7 +79,7 @@
             </nav>
 
             <!-- Hamburger menu -->
-            <div class="burger header__burger">
+            <div class="burger header__burger header__burger--fixed">
               <div class="burger__line burger__line--dark"></div>
               <div class="burger__line burger__line--dark"></div>
               <div class="burger__line burger__line--dark"></div>

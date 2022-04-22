@@ -16,10 +16,67 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles/style.css" />
     <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
   </head>
   <body class="body">
     <div class="body__container">
+      <!-- Blackout Overlay -->
+      <div class="overlay overlay--sidebar"></div>
+      <div class="overlay overlay--popup"></div>
+
+      <!-- Modal window -->
+      <div class="popup">
+        <img
+          class="popup__img"
+          src="../../assets/images/pets/jennifer.png"
+          alt="dog"
+        />
+        <div class="content popup__content">
+          <!-- Name -->
+          <p class="heading heading--h3 content__name">Jennifer</p>
+          <!-- Type -->
+          <p class="heading heading--h4 content__type">Dog - Labrador</p>
+          <!-- Description -->
+          <p class="content__description">
+            Jennifer is a sweet 2 months old Labrador that is patiently waiting
+            to find a new forever home. This girl really enjoys being able to go
+            outside to run and play, but won't hesitate to play up a storm in
+            the house if she has all of her favorite toys.
+          </p>
+          <!-- List -->
+          <ul class="list content__list">
+            <li class="list__item">
+              <em class="heading heading--h5-modal-window list__key"> age: </em>
+              2 months
+            </li>
+
+            <li class="list__item">
+              <em class="heading heading--h5-modal-window list__key">
+                inoculations:
+              </em>
+              none
+            </li>
+
+            <li class="list__item">
+              <em class="heading heading--h5-modal-window list__key">
+                diseases:
+              </em>
+              none
+            </li>
+
+            <li class="list__item">
+              <em class="heading heading--h5-modal-window list__key">
+                parasites:
+              </em>
+              none
+            </li>
+          </ul>
+        </div>
+        <button class="button popup__button">
+          <div class="popup__cross"></div>
+        </button>
+      </div>
+
       <!-- Header -->
       <div class="header-wrapper">
         <header class="header header--absolute">
@@ -32,6 +89,13 @@
 
             <!-- Navigation -->
             <nav class="nav nav--sidebar header__nav">
+              <!-- Sidebar logo -->
+              <a class="logo nav__logo" href="../main">
+                <p class="logo__title">Cozy House</p>
+                <p class="logo__subtitle">Shelter for pets in Boston</p>
+              </a>
+
+              <!-- Navbar links -->
               <ul class="nav__list">
                 <li class="nav__item">
                   <a class="nav__link nav__link--active" href="#about">
@@ -159,7 +223,7 @@
                 <!-- Cards -->
                 <div class="slider__container">
                   <!-- Card 1 -->
-                  <div class="card slider__card">
+                  <div class="card slider__card" data-id="4">
                     <img
                       class="card__img"
                       src="../../assets/images/main/pets-katrine.png"
@@ -170,7 +234,7 @@
                   </div>
 
                   <!-- Card 2 -->
-                  <div class="card slider__card">
+                  <div class="card slider__card" data-id="0">
                     <img
                       class="card__img"
                       src="../../assets/images/main/pets-jennifer.png"
@@ -181,7 +245,7 @@
                   </div>
 
                   <!-- Card 3 -->
-                  <div class="card slider__card">
+                  <div class="card slider__card" data-id="2">
                     <img
                       class="card__img"
                       src="../../assets/images/main/pets-woody.png"
