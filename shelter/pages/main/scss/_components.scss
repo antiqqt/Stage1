@@ -272,6 +272,11 @@ a {
     &--light {
       background-color: $color-light-xl;
     }
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+    }
   }
 }
 
@@ -698,8 +703,7 @@ a {
     display: block;
     width: 500px;
     height: 500px;
-    border-radius: 9px;
-    object-fit: fill;
+    border-radius: 9px 0 0 9px;
 
     @media (max-width: $ss-large-light) {
       width: 350px;
@@ -720,6 +724,10 @@ a {
     padding: 0;
     background-color: transparent;
     border-radius: 50%;
+
+    @media (max-width: $ss-medium-light) {
+      right: -30px;
+    }
   }
 
   &__cross {

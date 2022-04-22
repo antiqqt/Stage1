@@ -688,6 +688,10 @@ a:hover {
   .nav--sidebar--light {
     background-color: #FFFFFF;
   }
+  .nav--sidebar--fixed {
+    position: fixed;
+    top: 0;
+  }
 }
 
 .overlay {
@@ -1070,8 +1074,7 @@ a:hover {
   display: block;
   width: 500px;
   height: 500px;
-  border-radius: 9px;
-  object-fit: fill;
+  border-radius: 9px 0 0 9px;
 }
 @media (max-width: 1279.9px) {
   .popup__img {
@@ -1093,6 +1096,11 @@ a:hover {
   padding: 0;
   background-color: transparent;
   border-radius: 50%;
+}
+@media (max-width: 767.9px) {
+  .popup__button {
+    right: -30px;
+  }
 }
 .popup__cross {
   width: 20px;
