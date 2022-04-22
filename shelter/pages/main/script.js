@@ -112,7 +112,6 @@ popupOverlay.addEventListener('click', enableScrollOnBody);
 popupOverlay.addEventListener('click', removePopup);
 
 let popup;
-removePopup();
 
 function handlePopup(event) {
   // Get card that was clicked on
