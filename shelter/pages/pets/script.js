@@ -8,7 +8,7 @@
 const sideBar = document.querySelector('.nav--sidebar');
 const burgerBtn = document.querySelector('.burger');
 const navLinks = document.querySelectorAll('.nav__link');
-const overlay = document.querySelector('.overlay');
+const sidebarOverlay = document.querySelector('.overlay--sidebar');
 const headerLogo = document.querySelector('.header__logo');
 const body = document.querySelector('.body');
 const header = document.querySelector('.header');
@@ -17,25 +17,25 @@ const header = document.querySelector('.header');
 burgerBtn.addEventListener('click', toggleSidebar);
 burgerBtn.addEventListener('click', toggleBurger);
 burgerBtn.addEventListener('click', toggleHeaderLogo);
-burgerBtn.addEventListener('click', toggleOverlay);
+burgerBtn.addEventListener('click', toggleSidebarOverlay);
 burgerBtn.addEventListener('click', toggleScrollOnBody);
 burgerBtn.addEventListener('click', toggleHeaderPosition);
 
 navLinks.forEach((elem) => {
   elem.addEventListener('click', closeSidebar);
   elem.addEventListener('click', closeBurger);
-  elem.addEventListener('click', toggleHeaderLogo);
-  elem.addEventListener('click', closeOverlay);
-  elem.addEventListener('click', toggleScrollOnBody);
-  elem.addEventListener('click', toggleHeaderPosition);
+  elem.addEventListener('click', displayHeaderLogo);
+  elem.addEventListener('click', closeSidebarOverlay);
+  elem.addEventListener('click', enableScrollOnBody);
+  elem.addEventListener('click', fixHeaderPosition);
 });
 
-overlay.addEventListener('click', closeSidebar);
-overlay.addEventListener('click', closeBurger);
-overlay.addEventListener('click', toggleHeaderLogo);
-overlay.addEventListener('click', closeOverlay);
-overlay.addEventListener('click', toggleScrollOnBody);
-overlay.addEventListener('click', toggleHeaderPosition);
+sidebarOverlay.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeBurger);
+sidebarOverlay.addEventListener('click', displayHeaderLogo);
+sidebarOverlay.addEventListener('click', closeSidebarOverlay);
+sidebarOverlay.addEventListener('click', enableScrollOnBody);
+sidebarOverlay.addEventListener('click', toggleHeaderPosition);
 
 // Sidebar menu
 function toggleSidebar() {
@@ -57,11 +57,11 @@ function closeBurger() {
 
 // Overlay blackout
 function toggleOverlay() {
-  overlay.classList.toggle('overlay--active');
+  sidebarOverlay.classList.toggle('overlay--active');
 }
 
 function closeOverlay() {
-  overlay.classList.remove('overlay--active');
+  sidebarOverlay.classList.remove('overlay--active');
 }
 
 // Logos
@@ -69,17 +69,17 @@ function toggleHeaderLogo() {
   headerLogo.classList.toggle('logo--hidden');
 }
 
-function closeHeaderLogo() {
-  headerLogo.classList.remove('header__logo--hidden');
+function displayHeaderLogo() {
+  headerLogo.classList.remove('logo--hidden');
 }
 
 // Sidebar overlay blackout
-function toggleOverlay() {
-  overlay.classList.toggle('overlay--active');
+function toggleSidebarOverlay() {
+  sidebarOverlay.classList.toggle('overlay--active');
 }
 
-function closeOverlay() {
-  overlay.classList.remove('overlay--active');
+function closeSidebarOverlay() {
+  sidebarOverlay.classList.remove('overlay--active');
 }
 
 // Scroll
@@ -87,7 +87,15 @@ function toggleScrollOnBody() {
   body.classList.toggle('body--scroll-disabled')
 }
 
+function enableScrollOnBody() {
+  body.classList.remove('body--scroll-disabled')
+}
+
 // Header on pets page
 function toggleHeaderPosition() {
   header.classList.toggle('header--active');
+}
+
+function fixHeaderPosition() {
+  header.classList.remove('header--active');
 }
