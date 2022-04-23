@@ -160,7 +160,7 @@
               <div class="slider section--friends__slider">
                 <!-- Left arrow -->
                 <button
-                  class="button button--round button--arrow slider__button"
+                  class="button button--round button--arrow slider__button slider__button--left"
                 >
                   <span class="button--arrow__arrow button--arrow__arrow--left">
                     &#10145;
@@ -169,43 +169,62 @@
 
                 <!-- Cards -->
                 <div class="slider__container">
-                  <!-- Card 1 -->
-                  <div class="card slider__card" data-id="4">
-                    <img
-                      class="card__img"
-                      src="../../assets/images/main/pets-katrine.png"
-                      alt="Katrine"
-                    />
-                    <p class="card__heading">Katrine</p>
-                    <button class="button button--secondary">Learn more</button>
-                  </div>
+                  <div class="slider__carousel">
+                    <!-- Left -->
+                    <div class="slider__item slider__item--left">
+                    </div>
 
-                  <!-- Card 2 -->
-                  <div class="card slider__card" data-id="0">
-                    <img
-                      class="card__img"
-                      src="../../assets/images/main/pets-jennifer.png"
-                      alt="Jennifer"
-                    />
-                    <p class="card__heading">Jennifer</p>
-                    <button class="button button--secondary">Learn more</button>
-                  </div>
+                    <!-- Active -->
+                    <div class="slider__item slider__item--active">
+                      <!-- Card 1 -->
+                      <div class="card slider__card" data-id="4">
+                        <img
+                          class="card__img"
+                          src="../../assets/images/main/pets-katrine.png"
+                          alt="Katrine"
+                        />
+                        <p class="card__heading">Katrine</p>
+                        <button class="button button--secondary">
+                          Learn more
+                        </button>
+                      </div>
 
-                  <!-- Card 3 -->
-                  <div class="card slider__card" data-id="2">
-                    <img
-                      class="card__img"
-                      src="../../assets/images/main/pets-woody.png"
-                      alt="Woody"
-                    />
-                    <p class="card__heading">Woody</p>
-                    <button class="button button--secondary">Learn more</button>
+                      <!-- Card 2 -->
+                      <div class="card slider__card" data-id="0">
+                        <img
+                          class="card__img"
+                          src="../../assets/images/main/pets-jennifer.png"
+                          alt="Jennifer"
+                        />
+                        <p class="card__heading">Jennifer</p>
+                        <button class="button button--secondary">
+                          Learn more
+                        </button>
+                      </div>
+
+                      <!-- Card 3 -->
+                      <div class="card slider__card" data-id="2">
+                        <img
+                          class="card__img"
+                          src="../../assets/images/main/pets-woody.png"
+                          alt="Woody"
+                        />
+                        <p class="card__heading">Woody</p>
+                        <button class="button button--secondary">
+                          Learn more
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Right -->
+                    <div class="slider__item slider__item--right">
+                    </div>
                   </div>
                 </div>
 
                 <!-- Right arrow -->
                 <button
-                  class="button button--round button--arrow slider__button"
+                  class="button button--round button--arrow slider__button slider__button--right"
                 >
                   <span
                     class="button--arrow__arrow button--arrow__arrow--right"

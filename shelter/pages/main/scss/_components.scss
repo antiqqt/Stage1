@@ -346,35 +346,74 @@ a {
   }
 
   &__container {
-    flex-grow: 1;
-    display: flex;
-    column-gap: 9.1%; // 90px
+    width: 990px;
+    overflow: hidden;
 
     @media (max-width: $ss-large-light) {
-      column-gap: 0;
-      justify-content: space-evenly;
-    }
-
-    @media (max-width: $ss-medium) {
-      justify-content: space-between;
+      width: 580px;
     }
 
     @media (max-width: $ss-medium-light) {
-      width: 100%;
-      justify-content: center;
+      width: 270px;
     }
   }
 
-  &__card {
-    // Make 3rd card hidden on medium size screens
-    &:nth-child(3) {
+  &__carousel {
+    position: relative;
+    left: -1080px;
+    display: flex;
+    column-gap: 90px;
+
+    @media (max-width: $ss-large-light) {
+      left: -620px;
+      column-gap: 40px;
+    }
+
+    &--transition-left {
+      animation-name: move-left;
+      animation-duration: 3s;
+      animation-timing-function: ease-out;
+
       @media (max-width: $ss-large-light) {
+        animation-name: move-left768;
+        animation-duration: 3s;
+        animation-timing-function: ease-out;
+      }
+
+      @media (max-width: $ss-medium-light) {
+        animation-name: move-left320;
+      }
+    }
+
+    &--transition-right {
+      animation-name: move-right;
+      animation-duration: 3s;
+      animation-timing-function: ease-out;
+
+      @media (max-width: $ss-large-light) {
+        animation-name: move-right768;
+      }
+
+      @media (max-width: $ss-medium-light) {
+        animation-name: move-right320;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 90px;
+
+    @media (max-width: $ss-large-light) {
+      column-gap: 40px;
+
+      .card:last-child {
         display: none;
       }
     }
 
-    &:nth-child(2) {
-      @media (max-width: $ss-medium-light) {
+    @media (max-width: $ss-medium-light) {
+      .card:nth-child(2) {
         display: none;
       }
     }
@@ -387,12 +426,73 @@ a {
   }
 }
 
+@keyframes move-left {
+  0% {
+    left: -1080px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes move-right {
+  0% {
+    left: -1080px;
+  }
+
+  100% {
+    left: -2160px;
+  }
+}
+
+@keyframes move-left768 {
+  0% {
+    left: -620px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes move-right768 {
+  0% {
+    left: -620px;
+  }
+
+  100% {
+    left: -1240px;
+  }
+}
+
+@keyframes move-left320 {
+  0% {
+    left: -1080px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes move-right320 {
+  0% {
+    left: -1080px;
+  }
+
+  100% {
+    left: -2160px;
+  }
+}
+
 // Cards
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  width: 270px;
   padding-bottom: 30px;
   background-color: $color-light-s;
   border-radius: 9px;
