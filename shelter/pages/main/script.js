@@ -199,8 +199,6 @@ function generatePetFeatures(petData) {
   const diseases = generatePetFeatureItem(petData, 'diseases');
   const parasites = generatePetFeatureItem(petData, 'parasites');
 
-
-
   // Put together
   const list = document.createElement('ul');
   list.classList.add('list');
@@ -265,4 +263,161 @@ function openPopup() {
 
 function removePopup() {
   document.querySelector('.popup').remove();
+}
+
+// SLIDER
+const sliderBtnLeft = document.querySelector('.slider__button--left');
+const sliderBtnRight = document.querySelector('.slider__button--right');
+const carousel = document.querySelector('.slider__carousel');
+const sliderItemLeft = document.querySelector('.slider__item--left');
+const sliderItemRight = document.querySelector('.slider__item--right');
+const sliderItemActive = document.querySelector('.slider__item--active');
+
+setupSlider();
+sliderBtnLeft.addEventListener('click', carouselMoveLeft);
+sliderBtnRight.addEventListener('click', carouselMoveRight);
+carousel.addEventListener('animationend', carouselReloadAnimation);
+
+function carouselMoveLeft(event) {
+  // Play animation
+  carousel.classList.add('slider__carousel--transition-left');
+
+  // Disable buttons until end of animation
+  carouselDisableBtns();
+}
+
+function carouselMoveRight() {
+  // Play animation
+  carousel.classList.add('slider__carousel--transition-right');
+
+  // Disable buttons until end of animation
+  carouselDisableBtns();
+}
+
+function carouselReloadAnimation(e) {
+  let sideItem, oppositeSideItem;
+
+
+  if (e.animationName.includes('left')) {
+    // Remove animation class
+    carousel.classList.remove('slider__carousel--transition-left');
+
+    sideItem = sliderItemLeft;
+    oppositeSideItem = sliderItemRight;
+  } else {
+    // Remove animation class
+    carousel.classList.remove('slider__carousel--transition-right');
+
+    sideItem = sliderItemRight;
+    oppositeSideItem = sliderItemLeft;
+  }
+
+  // Swap side and active elements
+  const activeItem = document.querySelector('.slider__item--active');
+  const newActiveItem = createNewActiveItem(activeItem, sideItem);
+  const newIds = [...newActiveItem.children].map((e) => Number(e.dataset.id));
+  activeItem.replaceWith(newActiveItem);
+
+  // Generate new cards
+  reshuffleCards(sideItem);
+  reshuffleCards(oppositeSideItem, newIds);
+
+  // Enable buttons again
+  carouselEnableBtns();
+}
+
+function reshuffleCards(item, usedIds = []) {
+  // Limit reshuffling based on ids in given array
+  if (usedIds.length === 0) {
+    // or based on ids of existing cards in block (default)
+    Array.from(item.children).forEach((card) => {
+      usedIds.push(Number(card.dataset.id));
+    });
+  }
+  // console.log(usedIds);
+
+  // Clear block
+  item.innerHTML = '';
+
+  // Generate new cards in it
+  for (let i = 0; i < 3; i++) {
+    let newId = getPseudoRandomNumber(0, 7, usedIds);
+    let newCard = generateCard(newId);
+
+    item.append(newCard);
+  }
+}
+
+function createNewActiveItem(target, source) {
+  const targetClasses = target.className;
+
+  target = source.cloneNode(true);
+  target.className = targetClasses;
+
+  return target;
+}
+
+function getPseudoRandomNumber(min, max, exceptions) {
+  let set = new Set(exceptions);
+  let num = getRandomNumberMaxInclusive(min, max);
+
+  while (set.has(num)) {
+    num = getRandomNumberMaxInclusive(min, max);
+  }
+
+  // Add new exception to usedIds
+  exceptions.push(num);
+
+  return num;
+}
+
+function getRandomNumberMaxInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function generateCard(id) {
+  const petData = petsData[id];
+
+  // Create card
+  const card = document.createElement('div');
+  card.className = 'card slider__card';
+  card.dataset.id = String(id);
+
+  // Create img
+  const img = document.createElement('img');
+  img.className = 'card__img';
+  img.src = petData.img;
+  img.alt = petData.breed;
+
+  // Create heading
+  const heading = document.createElement('p');
+  heading.className = 'card__heading';
+  heading.innerText = petData.name;
+
+  // Create button
+  const btn = document.createElement('button');
+  btn.className = 'button button--secondary';
+  btn.innerText = 'Learn more';
+
+  // Put together
+  card.append(img, heading, btn);
+
+  return card;
+}
+
+function carouselDisableBtns() {
+  sliderBtnLeft.removeEventListener('click', carouselMoveLeft);
+  sliderBtnRight.removeEventListener('click', carouselMoveRight);
+}
+
+function carouselEnableBtns() {
+  sliderBtnLeft.addEventListener('click', carouselMoveLeft);
+  sliderBtnRight.addEventListener('click', carouselMoveRight);
+}
+
+function setupSlider() {
+  let usedIds = [ , , ];
+  reshuffleCards(sliderItemActive, usedIds);
+  reshuffleCards(sliderItemLeft, [...usedIds]);
+  reshuffleCards(sliderItemRight, [...usedIds]);
 }
