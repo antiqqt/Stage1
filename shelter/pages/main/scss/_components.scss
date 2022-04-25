@@ -335,8 +335,9 @@ a {
   }
 
   @media (max-width: $ss-medium-light) {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
     column-gap: 12%;
     row-gap: 20px;
   }
@@ -346,6 +347,8 @@ a {
   }
 
   &__container {
+    grid-column: span 2;
+
     width: 990px;
     overflow: hidden;
 
@@ -369,6 +372,10 @@ a {
       column-gap: 40px;
     }
 
+    @media (max-width: $ss-medium-light) {
+      left: -310px;
+    }
+
     &--transition-left {
       animation-name: move-left;
       animation-duration: 3s;
@@ -376,12 +383,13 @@ a {
 
       @media (max-width: $ss-large-light) {
         animation-name: move-left768;
-        animation-duration: 3s;
+        animation-duration: 2.75s;
         animation-timing-function: ease-out;
       }
 
       @media (max-width: $ss-medium-light) {
         animation-name: move-left320;
+        animation-duration: 1.75s;
       }
     }
 
@@ -392,10 +400,12 @@ a {
 
       @media (max-width: $ss-large-light) {
         animation-name: move-right768;
+        animation-duration: 2.75s;
       }
 
       @media (max-width: $ss-medium-light) {
         animation-name: move-right320;
+        animation-duration: 1.75s;
       }
     }
   }
@@ -422,6 +432,14 @@ a {
   &__button {
     @media (max-width: $ss-medium-light) {
       order: 1;
+
+      &--left {
+        justify-self: end;
+      }
+
+      &--right {
+        justify-self: start;
+      }
     }
   }
 }
@@ -468,7 +486,7 @@ a {
 
 @keyframes move-left320 {
   0% {
-    left: -1080px;
+    left: -310px;
   }
 
   100% {
@@ -478,11 +496,11 @@ a {
 
 @keyframes move-right320 {
   0% {
-    left: -1080px;
+    left: -310px;
   }
 
   100% {
-    left: -2160px;
+    left: -620px;
   }
 }
 
@@ -765,14 +783,27 @@ a {
   @media (max-width: $ss-medium-light) {
     column-gap: 10px;
   }
+}
 
-  &__button:nth-child(3) {
-    cursor: default;
+.pagination__button {
+  &--double-backward {
+  }
 
+  &--backward {
+  }
+
+  &--count {
     &:hover {
+      cursor: default;
       background-color: $color-primary;
       border-color: $color-primary;
     }
+  }
+
+  &--forward {
+  }
+
+  &--double-forward {
   }
 }
 
@@ -928,6 +959,54 @@ a {
       height: 4px;
       background-color: $color-primary;
       border-radius: 50%;
+    }
+  }
+}
+
+// Gallery on pets page
+.gallery {
+  &__page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 100%;
+    justify-items: center;
+
+    @media (max-width: $ss-large-light) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $ss-medium-light) {
+      grid-template-columns: 1fr;
+    }
+
+    & > :nth-child(odd) {
+      @media (max-width: $ss-large-light) {
+        justify-self: end;
+      }
+  
+      @media (max-width: $ss-medium-light) {
+        justify-self: center;
+      }
+    }
+
+    & > :nth-child(even) {
+      @media (max-width: $ss-large-light) {
+        justify-self: start;
+      }
+  
+      @media (max-width: $ss-medium-light) {
+        justify-self: center;
+      }
+    }
+
+    &--active {
+      display: grid;
+    }
+
+    &--hidden {
+      display: none;
     }
   }
 }

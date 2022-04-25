@@ -745,8 +745,9 @@ a:hover {
 }
 @media (max-width: 767.9px) {
   .slider {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
     column-gap: 12%;
     row-gap: 20px;
   }
@@ -757,6 +758,7 @@ a:hover {
   }
 }
 .slider__container {
+  grid-column: span 2;
   width: 990px;
   overflow: hidden;
 }
@@ -782,6 +784,11 @@ a:hover {
     column-gap: 40px;
   }
 }
+@media (max-width: 767.9px) {
+  .slider__carousel {
+    left: -310px;
+  }
+}
 .slider__carousel--transition-left {
   animation-name: move-left;
   animation-duration: 3s;
@@ -790,13 +797,14 @@ a:hover {
 @media (max-width: 1279.9px) {
   .slider__carousel--transition-left {
     animation-name: move-left768;
-    animation-duration: 3s;
+    animation-duration: 2.75s;
     animation-timing-function: ease-out;
   }
 }
 @media (max-width: 767.9px) {
   .slider__carousel--transition-left {
     animation-name: move-left320;
+    animation-duration: 1.75s;
   }
 }
 .slider__carousel--transition-right {
@@ -807,11 +815,13 @@ a:hover {
 @media (max-width: 1279.9px) {
   .slider__carousel--transition-right {
     animation-name: move-right768;
+    animation-duration: 2.75s;
   }
 }
 @media (max-width: 767.9px) {
   .slider__carousel--transition-right {
     animation-name: move-right320;
+    animation-duration: 1.75s;
   }
 }
 .slider__item {
@@ -834,6 +844,12 @@ a:hover {
 @media (max-width: 767.9px) {
   .slider__button {
     order: 1;
+  }
+  .slider__button--left {
+    justify-self: end;
+  }
+  .slider__button--right {
+    justify-self: start;
   }
 }
 
@@ -871,7 +887,7 @@ a:hover {
 }
 @keyframes move-left320 {
   0% {
-    left: -1080px;
+    left: -310px;
   }
   100% {
     left: 0;
@@ -879,10 +895,10 @@ a:hover {
 }
 @keyframes move-right320 {
   0% {
-    left: -1080px;
+    left: -310px;
   }
   100% {
-    left: -2160px;
+    left: -620px;
   }
 }
 .card {
