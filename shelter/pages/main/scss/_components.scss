@@ -315,7 +315,7 @@ a {
   }
 
   &--active {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -859,6 +859,11 @@ a {
     @media (max-width: $ss-medium-light) {
       right: -30px;
     }
+
+    &--hover {
+      background-color: #fddcc4;
+      border-color: #fddcc4;
+    }
   }
 
   &__cross {
@@ -985,7 +990,7 @@ a {
       @media (max-width: $ss-large-light) {
         justify-self: end;
       }
-  
+
       @media (max-width: $ss-medium-light) {
         justify-self: center;
       }
@@ -995,7 +1000,7 @@ a {
       @media (max-width: $ss-large-light) {
         justify-self: start;
       }
-  
+
       @media (max-width: $ss-medium-light) {
         justify-self: center;
       }

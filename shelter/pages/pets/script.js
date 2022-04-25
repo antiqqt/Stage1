@@ -110,6 +110,8 @@ const popupOverlay = document.querySelector('.overlay--popup');
 popupOverlay.addEventListener('click', closePopupOverlay);
 popupOverlay.addEventListener('click', enableScrollOnBody);
 popupOverlay.addEventListener('click', removePopup);
+popupOverlay.addEventListener('mouseenter', hoverOnPopupBtn);
+popupOverlay.addEventListener('mouseleave', removeHoverOnPopupBtn);
 
 let popup;
 
@@ -265,6 +267,19 @@ function removePopup() {
   document.querySelector('.popup').remove();
 }
 
+function hoverOnPopupBtn() {
+  const popupBtn = document.querySelector('.popup__button');
+  popupBtn.classList.add('popup__button--hover');
+}
+
+function removeHoverOnPopupBtn() {
+  const popupBtn = document.querySelector('.popup__button');
+
+  if (popupBtn) {
+    popupBtn.classList.remove('popup__button--hover');
+  }
+}
+
 // Gallery with pagination
 const gallery = document.querySelector('.gallery');
 const galleryIds = generate48GalleryIds();
@@ -272,29 +287,30 @@ const galleryIdsFor6Pages = cutIdsIntoPages(galleryIds, 6);
 const galleryIdsFor8Pages = cutIdsIntoPages(galleryIds, 8);
 const galleryIdsFor16Pages = cutIdsIntoPages(galleryIds, 16);
 let activePageIndex;
+
+const matchMediaLarge = window.matchMedia('(min-width: 1280px)');
+const matchMediaMedium = window.matchMedia('(max-width: 1279.9px)');
+const matchMediaSmall = window.matchMedia('(max-width: 767.9px)');
+
+const paginationBtns = document.querySelector('.pagination');
+const paginationLeftBtns = [
+  paginationBtns.children[0],
+  paginationBtns.children[1],
+];
+const paginationRightBtns = [
+  paginationBtns.children[3],
+  paginationBtns.children[4],
+];
+paginationBtns.addEventListener('click', paginationHandler);
+
 onStart();
 
 function onStart() {
-  gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
-
-  window.addEventListener('resize', () => {
-    const matchMediaLarge = window.matchMedia('(min-width: 1280px)');
-    const matchMediaMedium = window.matchMedia('(max-width: 1279.9px)');
-    const matchMediaSmall = window.matchMedia('(max-width: 767.9px)');
-  
-    if (matchMediaLarge.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
-    }
-  
-    if (matchMediaMedium.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor8Pages).innerHTML;
-    }
-    
-    if (matchMediaSmall.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor16Pages).innerHTML;
-    }
-  })
-
+  // Set up page properly
+  // taking into account the possible screensize
+  // even after reload
+  resizeHandler();
+  window.addEventListener('resize', resizeHandler);
 
   console.log("This is my starting array of pseudorandom ID's:", galleryIds);
   console.log('Number of ID occurrences in it:', countOccurrences(galleryIds));
@@ -316,7 +332,30 @@ function onStart() {
     'Number of ID occurrences in it:',
     countOccurrences(galleryIdsFor16Pages)
   );
-};
+}
+
+function resizeHandler() {
+  if (matchMediaLarge.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
+  }
+
+  if (matchMediaMedium.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor8Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
+  }
+
+  if (matchMediaSmall.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor16Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
+  }
+}
 
 function generate48GalleryIds() {
   let usedIDs = new Set();
@@ -384,6 +423,7 @@ function generateGallery(galleryIds) {
   // Make first page active
   const activePage = gallery.children[0];
   activePageIndex = 0;
+  updatePageCount(activePageIndex + 1);
   activePage.classList.remove('gallery__page--hidden');
   activePage.classList.add('gallery__page--active');
 
@@ -451,17 +491,6 @@ function reshuffleArray(array) {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 }
-
-const paginationBtns = document.querySelector('.pagination');
-const paginationLeftBtns = [
-  paginationBtns.children[0],
-  paginationBtns.children[1],
-];
-const paginationRightBtns = [
-  paginationBtns.children[3],
-  paginationBtns.children[4],
-];
-paginationBtns.addEventListener('click', paginationHandler);
 
 function paginationHandler(e) {
   const galleryLength = gallery.children.length;

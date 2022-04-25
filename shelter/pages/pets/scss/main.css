@@ -724,7 +724,7 @@ a:hover {
   background-color: #000000;
 }
 .burger--active {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 .slider {
@@ -1207,6 +1207,10 @@ a:hover {
   .popup__button {
     right: -30px;
   }
+}
+.popup__button--hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 .popup__cross {
   width: 20px;
