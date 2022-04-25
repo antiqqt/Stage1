@@ -272,29 +272,18 @@ const galleryIdsFor6Pages = cutIdsIntoPages(galleryIds, 6);
 const galleryIdsFor8Pages = cutIdsIntoPages(galleryIds, 8);
 const galleryIdsFor16Pages = cutIdsIntoPages(galleryIds, 16);
 let activePageIndex;
+
+const matchMediaLarge = window.matchMedia('(min-width: 1280px)');
+const matchMediaMedium = window.matchMedia('(max-width: 1279.9px)');
+const matchMediaSmall = window.matchMedia('(max-width: 767.9px)');
 onStart();
 
 function onStart() {
-  gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
-
-  window.addEventListener('resize', () => {
-    const matchMediaLarge = window.matchMedia('(min-width: 1280px)');
-    const matchMediaMedium = window.matchMedia('(max-width: 1279.9px)');
-    const matchMediaSmall = window.matchMedia('(max-width: 767.9px)');
-  
-    if (matchMediaLarge.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
-    }
-  
-    if (matchMediaMedium.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor8Pages).innerHTML;
-    }
-    
-    if (matchMediaSmall.matches) {
-      gallery.innerHTML = generateGallery(galleryIdsFor16Pages).innerHTML;
-    }
-  })
-
+  // Set up page properly
+  // taking into account the possible screensize
+  // even after reload
+  resizeHandler();
+  window.addEventListener('resize', resizeHandler);
 
   console.log("This is my starting array of pseudorandom ID's:", galleryIds);
   console.log('Number of ID occurrences in it:', countOccurrences(galleryIds));
@@ -316,7 +305,21 @@ function onStart() {
     'Number of ID occurrences in it:',
     countOccurrences(galleryIdsFor16Pages)
   );
-};
+}
+
+function resizeHandler() {
+  if (matchMediaLarge.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
+  }
+
+  if (matchMediaMedium.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor8Pages).innerHTML;
+  }
+
+  if (matchMediaSmall.matches) {
+    gallery.innerHTML = generateGallery(galleryIdsFor16Pages).innerHTML;
+  }
+}
 
 function generate48GalleryIds() {
   let usedIDs = new Set();
