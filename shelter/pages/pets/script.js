@@ -291,6 +291,18 @@ let activePageIndex;
 const matchMediaLarge = window.matchMedia('(min-width: 1280px)');
 const matchMediaMedium = window.matchMedia('(max-width: 1279.9px)');
 const matchMediaSmall = window.matchMedia('(max-width: 767.9px)');
+
+const paginationBtns = document.querySelector('.pagination');
+const paginationLeftBtns = [
+  paginationBtns.children[0],
+  paginationBtns.children[1],
+];
+const paginationRightBtns = [
+  paginationBtns.children[3],
+  paginationBtns.children[4],
+];
+paginationBtns.addEventListener('click', paginationHandler);
+
 onStart();
 
 function onStart() {
@@ -325,14 +337,23 @@ function onStart() {
 function resizeHandler() {
   if (matchMediaLarge.matches) {
     gallery.innerHTML = generateGallery(galleryIdsFor6Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
   }
 
   if (matchMediaMedium.matches) {
     gallery.innerHTML = generateGallery(galleryIdsFor8Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
   }
 
   if (matchMediaSmall.matches) {
     gallery.innerHTML = generateGallery(galleryIdsFor16Pages).innerHTML;
+
+    enableBtns();
+    disableBtns('left');
   }
 }
 
@@ -402,6 +423,7 @@ function generateGallery(galleryIds) {
   // Make first page active
   const activePage = gallery.children[0];
   activePageIndex = 0;
+  updatePageCount(activePageIndex + 1);
   activePage.classList.remove('gallery__page--hidden');
   activePage.classList.add('gallery__page--active');
 
@@ -469,17 +491,6 @@ function reshuffleArray(array) {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 }
-
-const paginationBtns = document.querySelector('.pagination');
-const paginationLeftBtns = [
-  paginationBtns.children[0],
-  paginationBtns.children[1],
-];
-const paginationRightBtns = [
-  paginationBtns.children[3],
-  paginationBtns.children[4],
-];
-paginationBtns.addEventListener('click', paginationHandler);
 
 function paginationHandler(e) {
   const galleryLength = gallery.children.length;
