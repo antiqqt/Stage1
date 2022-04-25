@@ -172,15 +172,11 @@
   }
 
   &__gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 40px;
-    row-gap: 30px;
+    width: 100%;
     padding-top: 14px;
     padding-bottom: 15px;
 
     @media (max-width: $ss-large-light) {
-      grid-template-columns: repeat(2, 1fr);
       padding: 0;
     }
 
@@ -189,24 +185,7 @@
     }
 
     @media (max-width: $ss-medium-light) {
-      grid-template-columns: 1fr;
       margin-bottom: 0;
-    }
-
-    // Hide every card after 6th
-    // on screens <= 1279px
-    & > :nth-child(n + 7) {
-      @media (max-width: $ss-large-light) {
-        display: none;
-      }
-    }
-
-    // Hide every card after 3th
-    // on screens <= 1279px
-    & > :nth-child(n + 4) {
-      @media (max-width: $ss-medium-light) {
-        display: none;
-      }
     }
   }
 }

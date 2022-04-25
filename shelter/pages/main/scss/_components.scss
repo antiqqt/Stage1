@@ -783,14 +783,27 @@ a {
   @media (max-width: $ss-medium-light) {
     column-gap: 10px;
   }
+}
 
-  &__button:nth-child(3) {
-    cursor: default;
+.pagination__button {
+  &--double-backward {
+  }
 
+  &--backward {
+  }
+
+  &--count {
     &:hover {
+      cursor: default;
       background-color: $color-primary;
       border-color: $color-primary;
     }
+  }
+
+  &--forward {
+  }
+
+  &--double-forward {
   }
 }
 
@@ -946,6 +959,54 @@ a {
       height: 4px;
       background-color: $color-primary;
       border-radius: 50%;
+    }
+  }
+}
+
+// Gallery on pets page
+.gallery {
+  &__page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 100%;
+    justify-items: center;
+
+    @media (max-width: $ss-large-light) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $ss-medium-light) {
+      grid-template-columns: 1fr;
+    }
+
+    & > :nth-child(odd) {
+      @media (max-width: $ss-large-light) {
+        justify-self: end;
+      }
+  
+      @media (max-width: $ss-medium-light) {
+        justify-self: center;
+      }
+    }
+
+    & > :nth-child(even) {
+      @media (max-width: $ss-large-light) {
+        justify-self: start;
+      }
+  
+      @media (max-width: $ss-medium-light) {
+        justify-self: center;
+      }
+    }
+
+    &--active {
+      display: grid;
+    }
+
+    &--hidden {
+      display: none;
     }
   }
 }
