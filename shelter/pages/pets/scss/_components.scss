@@ -315,7 +315,7 @@ a {
   }
 
   &--active {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -858,6 +858,11 @@ a {
 
     @media (max-width: $ss-medium-light) {
       right: -30px;
+    }
+
+    &--hover {
+      background-color: #fddcc4;
+      border-color: #fddcc4;
     }
   }
 

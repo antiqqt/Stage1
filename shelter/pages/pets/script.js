@@ -110,6 +110,8 @@ const popupOverlay = document.querySelector('.overlay--popup');
 popupOverlay.addEventListener('click', closePopupOverlay);
 popupOverlay.addEventListener('click', enableScrollOnBody);
 popupOverlay.addEventListener('click', removePopup);
+popupOverlay.addEventListener('mouseenter', hoverOnPopupBtn);
+popupOverlay.addEventListener('mouseleave', removeHoverOnPopupBtn);
 
 let popup;
 
@@ -263,6 +265,19 @@ function openPopup() {
 
 function removePopup() {
   document.querySelector('.popup').remove();
+}
+
+function hoverOnPopupBtn() {
+  const popupBtn = document.querySelector('.popup__button');
+  popupBtn.classList.add('popup__button--hover');
+}
+
+function removeHoverOnPopupBtn() {
+  const popupBtn = document.querySelector('.popup__button');
+
+  if (popupBtn) {
+    popupBtn.classList.remove('popup__button--hover');
+  }
 }
 
 // Gallery with pagination
