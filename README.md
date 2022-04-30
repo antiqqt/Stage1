@@ -1,7 +1,7 @@
 ## My projects from RS School stage#0
 These are some advanced projects I made during [RS School](https://rollingscopes.com/) [stage#1](https://rs.school/js/) course in 2022.
 
-1. [Shelter landing](https://rolling-scopes-school.github.io/antiqqt-JSFE2022Q1/shelter/pages/main/)
+1. [Shelter landing page](https://rolling-scopes-school.github.io/antiqqt-JSFE2022Q1/shelter/pages/main/)
 > *2 responsive and interactive landing pages with slider, popup, hamburger menu and pagination elements.*
 - The layout is adaptive and responsive.
 - On all screenwidths layout looks exactly like the mockup in Figma. Checked with Perfect Pixel extension in Google Chrome.
