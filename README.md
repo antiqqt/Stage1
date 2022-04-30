@@ -1,4 +1,4 @@
-## My projects from RS School stage#0
+## My projects from RS School stage#1
 These are some advanced projects I made during [RS School](https://rollingscopes.com/) [stage#1](https://rs.school/js/) course in 2022.
 
 1. [Shelter landing page](https://rolling-scopes-school.github.io/antiqqt-JSFE2022Q1/shelter/pages/main/)
